@@ -1,3 +1,9 @@
+@font-face
+{
+	font-family: "Champagne Limousines Bold" ;
+	src: url(fonts/champagne_limousines/Champagne_Limousines_Bold.ttf) format("truetype");
+}
+
 body
 {
 	background-color: #f9f9f9 !important;
@@ -5,7 +11,140 @@ body
 
 nav
 {
-	background-color: #ad83c1 !important;
+	background-color: #ad1457 !important;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
 	color: white;
+	width: 100%;
+	z-index: 10;
+}
+
+#filterButtonContainer, nav
+{
+	position: fixed !important;
+}
+
+#filterButtonContainer
+{
+	width: 100%;
+	z-index: 10;
+}
+
+#filterButton
+{
+	position: absolute; /* postulat de départ */
+	top: 50%; left: 50%; /* à 50%/50% du parent référent */
+	transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+	background-color: #f8bbd0;
+	border: 1px solid #f8bbd0;
+	text-transform: uppercase;
+	letter-spacing: 7px;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 10px;
+	transition: all .16s ease-in-out;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+	cursor: pointer;
+
+}
+
+#filterButton:hover
+{
+	background-color: #f48fb1;
+	border: 1px solid #f48fb1;
+	transition: all .16s ease-in-out;
+}
+
+#linkOpenFoodFacts
+{
+	font-family: 'Champagne Limousines Bold', sans-serif;
+	font-size: 2em;
+	color: white;
+	transition: all .16s ease-in-out;
+}
+
+#linkOpenFoodFacts:hover
+{
+	color: #f8bbd0;
+	transition: all .16s ease-in-out;
+}
+
+p
+{
+	text-align: center;
+	font-size: 2em;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+}
+
+form > label
+{
+	font-size: 1.3em;
+}
+
+#inputResearch
+{
+	margin-right: -8px;
+	height: 38px;
+	border-radius: .25rem;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+/* ============== */
+/* VALIDATE BUTTON */
+/* ============== */
+
+.validateButton
+{
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	vertical-align: middle;
+	z-index: 1;
+	-webkit-transition: .3s ease-out;
+	transition: .3s ease-out;
+}
+
+.btn
+{
+	text-decoration: none;
+	color: black;
+	background-color: #ffc107;
+	text-align: center;
+	letter-spacing: .5px;
+	-webkit-transition: .2s ease-out;
+	transition: .2s ease-out;
+	cursor: pointer;
+	border: none;
+	border-radius: 2px;
+	display: inline-block;
+	line-height: 36px;
+	padding: 0 2rem;
+	text-transform: uppercase;
+	vertical-align: middle;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 1rem;
+	outline: 0;
+}
+
+.btn
+{
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.btn:hover
+{
+	background-color: #ffd54f;
+}
+
+.btn:hover
+{
+	-webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+	box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
 }

@@ -23,8 +23,9 @@
                           <i class="fa fa-search" aria-hidden="true"></i>
                       </span>
                       <input type="text" class="form-control" placeholder="ex: Huile d'olive" aria-describedby="basic-addon1">
+                      <input type="submit" value="Valider" class="validateButton btn" id="validateButton"/>
+
                   </div>
-				  <input type="submit" value="Valider" class="validateButton btn" id="validateButton"/>
 			  </form>
 			</div>
 		</nav>

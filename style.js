@@ -23,3 +23,22 @@ function onElementHeightChange(nav, callback){
 
 onElementHeightChange(document.getElementById('nav'), function(){
 });
+
+var filtersBlock = document.getElementById('filtersBlock');
+filtersBlock.style.marginTop = nav+"px";
+
+function showFiltersBlock()
+{
+	filtersBlock.style.display = "block";
+	crossButton.style.display = "block";
+	filterButton.style.display = "none";
+}
+
+var crossButton = document.getElementById('crossButton');
+
+function closeFiltersBlock()
+{
+	filtersBlock.style.display = "none";
+	crossButton.style.display = "none";
+	filterButton.style.display = "block";
+}

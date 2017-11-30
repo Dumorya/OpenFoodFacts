@@ -23,14 +23,21 @@
                           <i class="fa fa-search" aria-hidden="true"></i>
                       </span>
                       <input type="text" class="form-control" placeholder="ex: Huile d'olive" aria-describedby="basic-addon1">
-                      <input type="submit" value="Valider" class="validateButton btn" id="validateButton"/>
+                      <input type="submit" value="Rechercher" class="validateButton btn" id="validateButton"/>
 
                   </div>
 			  </form>
 			</div>
 		</nav>
         <div id="filterButtonContainer">
-            <button id="filterButton">Filtrer</button>
+            <button id="filterButton" onclick="showFiltersBlock()">Filtrer</button>
+        </div>
+        <div id="filtersBlock">
+			<button id="crossButton" class="crossButton" onclick="closeFiltersBlock()">
+				<img class="crossImage" src="images/cross.png"/>
+			</button>
+			
+			<input value="Valider" type="submit" class="filtersValidateButton" id="filtersValidateButton" action="filter.php" onclick="closeFiltersBlock()"/>
         </div>
 
         <div id="content">

@@ -89,6 +89,34 @@ form > label
 	padding-bottom: 5px;
 	padding-left: 10px;
 }
+
+#filtersBlock
+{
+	width: 100%;
+	height: 200px;
+	background-color: blue;
+	position: fixed;
+	z-index: 9;
+	display: none;
+}
+
+.crossImage
+{
+	width: 20px;
+	height: auto;
+}
+
+.crossButton
+{
+	background: transparent;
+	border: 0px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 15;
+	cursor: pointer;
+}
+
 /* ============== */
 /* VALIDATE BUTTON */
 /* ============== */
@@ -110,7 +138,7 @@ form > label
 	transition: .3s ease-out;
 }
 
-.btn
+.btn, .filtersValidateButton
 {
 	text-decoration: none;
 	color: black;
@@ -140,11 +168,19 @@ form > label
 
 .btn:hover
 {
-	background-color: #ffd54f;
-}
-
-.btn:hover
-{
 	-webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
 	box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+.filtersValidateButton
+{
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.btn:hover, filtersValidateButton:hover
+{
+	background-color: #ffd54f;
 }

@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Open Food Facts</title>
         <meta name="description" content="A crowdfounding web application">
+        <link rel="shortcut icon" href="images/bar_code.png"/>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
@@ -37,7 +38,20 @@
 				<img class="crossImage" src="images/cross.png"/>
 			</button>
 			
-			<input value="Valider" type="submit" class="filtersValidateButton" id="filtersValidateButton" action="filter.php" onclick="closeFiltersBlock()"/>
+			<div class="filters">
+                <input list="brands" name="brands" value="Catégorie">
+                <datalist id="brands">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist>
+			</div>
+
+            <div class="filtersValidateButtonContainer">
+			    <input value="Valider" type="submit" class="filtersValidateButton" id="filtersValidateButton" action="filter.php" onclick="closeFiltersBlock()"/>
+            </div>
         </div>
 
         <div id="content">

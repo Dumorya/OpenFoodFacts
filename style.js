@@ -29,7 +29,7 @@ filtersBlock.style.marginTop = nav+"px";
 
 function showFiltersBlock()
 {
-	filtersBlock.style.display = "block";
+	filtersBlock.style.height = "300px";
 	crossButton.style.display = "block";
 	filterButton.style.display = "none";
 }
@@ -38,7 +38,7 @@ var crossButton = document.getElementById('crossButton');
 
 function closeFiltersBlock()
 {
-	filtersBlock.style.display = "none";
+	filtersBlock.style.height = "0px";
 	crossButton.style.display = "none";
 	filterButton.style.display = "block";
 }

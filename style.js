@@ -39,6 +39,6 @@ var crossButton = document.getElementById('crossButton');
 function closeFiltersBlock()
 {
 	filtersBlock.style.height = "0px";
-	crossButton.style.display = "none";
+    crossButton.style.display = "none";
 	filterButton.style.display = "block";
 }

@@ -112,6 +112,10 @@ form > label
 {
 	height: 240px;
 	overflow:auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
 }
 
 /* ============== */
@@ -199,10 +203,19 @@ form > label
 	position: fixed;
 	z-index: 9;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
-	
+
 	overflow:auto;
     -webkit-transition:height 200ms ease-in;
     -moz-transition:height 200ms ease-in;
     -o-transition:height 200ms ease-in;
     transition:height 200ms ease-in;
+}
+
+/* ============== */
+/* CSS OVERRIDE */
+/* ============== */
+
+.form-control {
+	width: auto !important;
+	display: inline !important;
 }

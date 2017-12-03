@@ -39,14 +39,62 @@
 			</button>
 			
 			<div class="filters">
-                <input list="brands" name="brands" value="Catégorie">
-                <datalist id="brands">
-                    <option value="Internet Explorer">
-                    <option value="Firefox">
-                    <option value="Chrome">
-                    <option value="Opera">
-                    <option value="Safari">
-                </datalist>
+                <div>
+                    <label>Marque</label>
+                    <select class="form-control">
+                        <option>Aucune</option>
+                        <option>Carrefour</option>
+                        <option>Cora</option>
+                        <option>Géant</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Catégorie</label>
+                    <select class="form-control">
+                        <option>Aucune</option>
+                        <option>Carrefour</option>
+                        <option>Cora</option>
+                        <option>Géant</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Label</label>
+                    <select class="form-control">
+                        <option>Aucune</option>
+                        <option>Carrefour</option>
+                        <option>Cora</option>
+                        <option>Géant</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Conditionnement</label>
+                    <select class="form-control">
+                        <option>Aucune</option>
+                        <option>Carrefour</option>
+                        <option>Cora</option>
+                        <option>Géant</option>
+                    </select>
+                </div>
+
+<!--                --><?php
+//                    for($i = 0 ; $i < $filtersTable->length ; $i++)
+//                    {
+//                        echo '<div>';
+//                        echo '<label>'.$filtersTable->categoryName.'</label>';
+//                        echo '<select class="form-control">';
+//
+//                        for($j = 0 ; $j < $filtersElementTable->length ; $j++)
+//                        {
+//                            echo '<option>'.$filtersElementTable->element.'</option>';
+//                        }
+//
+//                        echo '</select>';
+//                        echo '</div>';
+//                    }
+//                ?>
 			</div>
 
             <div class="filtersValidateButtonContainer">

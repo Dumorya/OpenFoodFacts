@@ -42,3 +42,10 @@ function closeFiltersBlock()
     crossButton.style.display = "none";
 	filterButton.style.display = "block";
 }
+
+function getValidateButtonFiled()
+{
+	var validateButtonFiled = document.getElementById("validateButtonFiled");
+	console.log(validateButtonFiled.value);
+	return validateButtonFiled.value;
+}

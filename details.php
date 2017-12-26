@@ -64,6 +64,8 @@
 			function getDetails($dbh)
 			{
 				
+				
+				
 				foreach($dbh->query('SELECT DISTINCT id_produit,nom_produit,marque,poids,note_nutritionnelle,date_creation,energie,graisse,graisse_sature,carbohydrate,sucres,fibres,proteines,sel,sodium,vitamin_a,calcium,fer,nutrition_score FROM open_food_facts.produit WHERE id_produit = '.$_GET['chosenProduct'].';') as $row)
 				{
 					$details[$row['nom_produit']] = array(
@@ -87,7 +89,7 @@
 						"nutritionScore" => $row['nutrition_score']
 					);
 					
-					$tableRowNames = array(
+					/*$tableRowNames = array(
 						'Nom du produit',
 						'Marque',
 						'Poids',
@@ -108,20 +110,82 @@
 						'Score de nutrition'
 					);
 					
-					foreach($tableRowNames as $row)
-					{
-						echo '<tr>';
-						echo 	'<th>'.$row.'</th>';
-						echo 	'<td>coucou</td>';
-						echo '</tr>';
-					}
-					
-					/*foreach($details as $row2 => $detail)
+					foreach($tableRowNames as $row2)
 					{
 						echo '<tr>';
 						echo 	'<th>'.$row2.'</th>';
+						echo	'<th>coucou</th>';
 						echo '</tr>';
 					}*/
+					
+					echo '<tr>';
+					echo 	'<th>Nom du produit</th>';
+					echo 	'<td>'.$row['nom_produit'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Marque</th>';
+					echo 	'<td>'.$row['marque'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Poids</th>';
+					echo 	'<td>'.$row['poids'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Note nutritionnelle</th>';
+					echo 	'<td>'.$row['note_nutritionnelle'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Date de création</th>';
+					echo 	'<td>'.$row['date_creation'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Energie</th>';
+					echo 	'<td>'.$row['energie'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Graisse</th>';
+					echo 	'<td>'.$row['graisse'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Graisse saturée</th>';
+					echo 	'<td>'.$row['graisse_sature'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Carbohydrate</th>';
+					echo 	'<td>'.$row['carbohydrate'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Sucres</th>';
+					echo 	'<td>'.$row['sucres'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Fibres</th>';
+					echo 	'<td>'.$row['fibres'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Proteines</th>';
+					echo 	'<td>'.$row['proteines'].'</td>';
+					echo '</tr>';
+					echo '<tr>';
+					echo 	'<th>Sel</th>';
+					echo 	'<td>'.$row['sel'].'</td>';
+					echo '</tr>';
+					echo 	'<th>Sodium</th>';
+					echo 	'<td>'.$row['sodium'].'</td>';
+					echo '</tr>';
+					echo 	'<th>Vitamine A</th>';
+					echo 	'<td>'.$row['vitamin_a'].'</td>';
+					echo '</tr>';
+					echo 	'<th>Calcium</th>';
+					echo 	'<td>'.$row['calcium'].'</td>';
+					echo '</tr>';
+					echo 	'<th>Fer</th>';
+					echo 	'<td>'.$row['fer'].'</td>';
+					echo '</tr>';
+					echo '</tr>';
+					echo 	'<th>Score de nutrition</th>';
+					echo 	'<td>'.$row['nutrition_score'].'</td>';
+					echo '</tr>';
 					
 				}
 				

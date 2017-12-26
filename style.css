@@ -107,15 +107,15 @@ form > label
 
 .filters
 {
-	height: 240px;
+	height: 75vh;
 	overflow:auto;
-	display: flex;
+	/*display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	padding-top: 30px;
 	align-items: center;
-	align-content: space-around;
+	align-content: space-around;*/
 }
 
 footer
@@ -163,6 +163,29 @@ div > a:hover
 	text-transform: uppercase;
 }
 
+.blockCenter
+{
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.filterLabel
+{
+	text-align: center;
+	display: block;
+}
+
+.filterInput
+{
+	width: 100% !important;
+}
+
+.filterDiv
+{
+	padding: 30px 0px;
+}
+
 /* ============== */
 /* VALIDATE BUTTON */
 /* ============== */
@@ -184,7 +207,7 @@ div > a:hover
 	transition: .3s ease-out;
 }
 
-.btn, .filtersValidateButton
+.btn, .filtersValidateButton, .addProductButton
 {
 	text-decoration: none;
 	color: black;
@@ -206,10 +229,23 @@ div > a:hover
 	outline: 0;
 }
 
-.filtersValidateButton:hover
+.filtersValidateButton:hover , .addProductButton:hover
 {
 	background-color: #ffd54f;
 	transition: all .16s ease-in-out;
+}
+
+.addProductButton
+{
+	width: 300px;
+}
+
+.addProductButtonContainer
+{
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 300px;
+	padding-bottom: 50px;
 }
 
 .btn
@@ -302,13 +338,55 @@ tr:hover
 	background-color: #f5f5f5;
 }
 
+/* ============== */
+/* MODAL */
+/* ============== */
 
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 80vh;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    width: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* ============== */
 /* CSS OVERRIDE */
 /* ============== */
 
 .form-control {
-	width: auto !important;
+	width: auto;
 	display: inline !important;
 }

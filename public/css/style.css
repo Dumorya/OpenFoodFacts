@@ -1,7 +1,7 @@
 @font-face
 {
 	font-family: "Champagne Limousines Bold" ;
-	src: url(fonts/champagne_limousines/Champagne_Limousines_Bold.ttf) format("truetype");
+	src: url(../fonts/champagne_limousines/Champagne_Limousines_Bold.ttf) format("truetype");
 }
 
 html, body
@@ -306,6 +306,7 @@ td, tr, th
 {
 	border: solid 1px #9e9e9e;
 	padding: 10px 0px;
+    width: 100px !important;
 }
 
 thead
@@ -389,4 +390,9 @@ tr:hover
 .form-control {
 	width: auto;
 	display: inline !important;
+}
+
+caption {
+	text-align: center !important;
+	caption-side: top !important;
 }

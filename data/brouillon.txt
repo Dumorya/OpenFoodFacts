@@ -1,0 +1,39 @@
+Insert INTO open_food_facts.pays(nom)
+select 'pays'
+from open_food_facts.pays
+WHERE NOT EXISTS (select * from open_food_facts.pays where lower(nom) = lower('pays'))
+limit 1;
+
+--ajoute possede_pays
+insert into open_food_facts.possede_pays(id_pays,id_produit)
+select 
+(select id_pays from open_food_facts.pays where lower(nom) = lower('pays') limit 1),
+(select id_produit from open_food_facts.produit order by id_produit desc limit 1)
+
+
+
+--requete afficher nom pays
+
+select po.id_produit,
+                po.nom_produit,
+                po.marque,
+                po.poids,
+                po.note_nutritionnelle,
+                po.date_creation,
+                po.energie,
+                po.graisse,
+                po.graisse_sature,
+                po.carbohydrate,
+                po.sucres,
+                po.fibres,
+                po.proteines,
+                po.sel,
+                po.sodium,
+                po.vitamin_a,
+                po.calcium,
+                po.fer,
+                po.nutrition_score, 
+                pa.nom as pays
+from open_food_facts.produit po inner join open_food_facts.possede_pays pp on po.id_produit = pp.id_produit inner join open_food_facts.pays pa on pp.id_pays = pa.id_pays
+where po.id_produit = 900
+

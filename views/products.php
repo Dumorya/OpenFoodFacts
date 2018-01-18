@@ -1,3 +1,7 @@
+<?php
+    // TODO centrer le "fliter par", affichage du "50 derniers produits ajoutés", ajouter un bouton back to top, ajouter smooth scroll
+?>
+
 <div class="page-wrap">
     <nav class="navbar navbar-default" id="nav">
         <div class="container-fluid">
@@ -49,6 +53,14 @@
                 <?php
                     }
                 ?>
+                <div class="blockCenter">
+					<label>Le produit </label>
+					<input type="radio" name="radioButton" value="contains"/>
+					<label for="contains"> contient </label>
+					<input type="radio" name="radioButton"value="notContains"/>
+					<label for="notContains"> ne contient pas </label>
+					<input type="text" name="contains"/>
+                </div>
 
                 <div class="filtersValidateButtonContainer">
                     <input value="Valider" type="submit" class="filtersValidateButton" id="filtersValidateButton" onclick="closeFiltersBlock()"/>
@@ -73,17 +85,21 @@
                     <img class="crossImage" src="public/images/cross.png"/>
                 </button>
                 <h2>Ajout d'un produit</h2>
-                <form>
+                
+                <form method="post" action="index.php?action=products">
                     <h3>Informations générales</h3>
 
                     <label>Nom du créateur (*) :</label>
-                    <input type="text" name="addProductCreatorName"/>
+                    <input type="text" name="addProductCreatorName" required/>
 
                     <label>Nom du produit (*) :</label>
-                    <input type="text" name="addProductProductName"/>
+                    <input type="text" name="addProductProductName" required/>
 
-                    <label>Marque :</label>
-                    <input type="text" name="addProductBrand"/>
+                    <label>Marque (*) :</label>
+                    <input type="text" name="addProductBrand" required/>
+
+                    <label>Pays (*) :</label>
+                    <input type="text" name="addProductCountry" required/>
 
                     <label>Poids :</label>
                     <input type="text" name="addProductWeight"/>
@@ -139,9 +155,15 @@
 
                     <label>Fer :</label>
                     <input type="text" name="addProductIron"/>
+                    
+                    <label>Fibres :</label>
+                    <input type="text" name="addProductFibers"/>
 
                     <label>Ingrédients :</label>
                     <input type="text" name="addProductIngredients"/>
+                    
+                    <label>Valeur nutritionnelle :</label>
+                    <input type="text" name="addProductNutritionScore"/>
 
 
                     <input type="submit" value="OK"/>
@@ -156,7 +178,7 @@
             <?php
                 if(count($products) == 0)
                 {
-                    echo '<p>Aucun produit</p>';
+                    echo '<p class="filterLabel">Aucun produit</p>';
                 }
                 else
                 {

@@ -14,7 +14,7 @@ function getProducts()
     $creatorFilters           = null;
     $nutritionalScoreFilters  = null;
     $ingredientFilters        = null;
-    $countryFilter		  	  = null;
+    $countryFilters		  	  = null;
     $research                 = null;
     $limit                    = null;
     $contains				  = null;
@@ -37,9 +37,9 @@ function getProducts()
     {
         $ingredientFilters = ($_POST['ingredientFilters'] != '') ? $_POST['ingredientFilters'] : null;
     }
-    if(isset($_POST['countryFilter']))
+    if(isset($_POST['countryFilters']))
     {
-        $countryFilter = ($_POST['countryFilter'] != '') ? $_POST['countryFilter'] : null;
+        $countryFilters = ($_POST['countryFilters'] != '') ? $_POST['countryFilters'] : null;
     }
     if(isset($_POST['research']))
     {
@@ -59,7 +59,7 @@ function getProducts()
        null === $creatorFilters &&
        null === $nutritionalScoreFilters &&
        null === $ingredientFilters &&
-       null === $countryFilter &&
+       null === $countryFilters &&
        null === $research
       )
     {
@@ -198,65 +198,65 @@ function getProducts()
 	$addProductIngredients		= $_POST['addProductIngredients'];
 	$addProductFibers			= $_POST['addProductFibers'];
 	$addProductNutritionScore	= $_POST['addProductNutritionScore'];*/
-    
+
 
     if($addProductNutritionalGrade === 'Aucune')
     {
         $addProductNutritionalGrade = '';
     }
-    if($addProductEnergy === '')
+    if($addProductEnergy === null)
     {
         $addProductEnergy = 'null';
     }
-    if($addProductFat === '')
+    if($addProductFat === null)
     {
         $addProductFat = 'null';
     }
-    if($addProductSaturatedFat === '')
+    if($addProductSaturatedFat === null)
     {
         $addProductSaturatedFat = 'null';
     }
-    if($addProductSugar === '')
+    if($addProductSugar === null)
     {
         $addProductSugar = 'null';
     }
-    if($addProductCarbohydrate === '')
+    if($addProductCarbohydrate === null)
     {
         $addProductCarbohydrate = 'null';
     }
-    if($addProductProteines === '')
+    if($addProductProteines === null)
     {
         $addProductProteines = 'null';
     }
-    if($addProductSalt === '')
+    if($addProductSalt === null)
     {
         $addProductSalt = 'null';
     }
-    if($addProductSodium === '')
+    if($addProductSodium === null)
     {
         $addProductSodium = 'null';
     }
-    if($addProductAVitamin === '')
+    if($addProductAVitamin === null)
     {
         $addProductAVitamin = 'null';
     }
-    if($addProductCVitamin === '')
+    if($addProductCVitamin === null)
     {
         $addProductCVitamin = 'null';
     }
-    if($addProductCalcium === '')
+    if($addProductCalcium === null)
     {
         $addProductCalcium = 'null';
     }
-    if($addProductIron === '')
+    if($addProductIron === null)
     {
         $addProductIron = 'null';
     }
-    if($addProductFibers === '')
+    if($addProductFibers === null)
     {
         $addProductFibers = 'null';
     }
-    if($addProductNutritionScore === '')
+    if($addProductNutritionScore === null)
     {
         $addProductNutritionScore = 'null';
     }
@@ -267,7 +267,7 @@ function getProducts()
 		$brandFilters,
 		$nutritionalScoreFilters,
 		$ingredientFilters,
-		$countryFilter,
+		$countryFilters,
 		$research,
 		$limit,
 		$contains,
@@ -295,7 +295,6 @@ function getProducts()
 		$addProductNutritionScore
 	);
     $filterCarac = $model->getFilters();
-    
 
     $products = array();
     if (count($rows) > 0)
@@ -317,9 +316,21 @@ function getProducts()
 
 function getDetails()
 {
+    $countries = array();
     $chosenProductId = $_GET['chosenProductId'];    
     $model = new Model();
-    $detail = $model->getDetails($chosenProductId);
-    
+    $detail1 = $model->getDetails($chosenProductId);
+    $detail2 = $model->getCountryDetails($chosenProductId);
+
     require ('views/details.php');
+}
+
+function edit()
+{
+    $chosenProductId = $_GET['chosenProductId'];
+    $model = new Model();
+    $detail1 = $model->getDetails($chosenProductId);
+    $detail2 = $model->getCountryDetails($chosenProductId);
+
+    require ('views/edit.php');
 }

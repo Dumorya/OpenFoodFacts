@@ -29,7 +29,9 @@
                     case 'details':
                         getDetails();
                     break;
-
+                    case 'edit':
+                        edit();
+                    break;
                     default:
                         getProducts();
                     break;
@@ -46,6 +48,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="public/js/style.js"></script>
+        <script type="text/javascript" src="public/js/smoothScroll.js"></script>
     </body>
 
     <footer>

@@ -87,17 +87,12 @@ class Model
             //init query
             // requête de base, affiche tous les produits
             $query = 'SELECT
-                          po.id_produit,
-                          po.nom_produit,
-                          po.marque,
-                          po.ingredients,
-                          po.note_nutritionnelle,
-                          pa.nom AS pays
-                      FROM open_food_facts.produit po
-                        INNER JOIN open_food_facts.possede_pays pp
-                        ON po.id_produit = pp.id_produit
-                        INNER JOIN open_food_facts.pays pa
-                        ON pp.id_pays = pa.id_pays
+                          id_produit,
+                          nom_produit,
+                          marque,
+                          ingredients,
+                          note_nutritionnelle
+                      FROM open_food_facts.produit
                        ';
 
             //construction condition
@@ -106,7 +101,7 @@ class Model
             // utilisation des filtres
             if ($creatorFilters !== null)
             {
-                $query .= 'WHERE LOWER(po.createur) LIKE ?';
+                $query .= 'WHERE LOWER(createur) LIKE ?';
                 $params[] = strtolower('%'.$creatorFilters.'%');
                 $multiFilter = true;
             }
@@ -121,7 +116,7 @@ class Model
                 {
                     $query .= ' WHERE ';
                 }
-                $query .= ' LOWER(po.marque) LIKE ?';
+                $query .= ' LOWER(marque) LIKE ?';
                 $params[] = strtolower('%'.$brandFilters.'%');
                 $multiFilter = true;
             }
@@ -136,7 +131,7 @@ class Model
                 {
                     $query .= ' WHERE ';
                 }
-                $query .= ' LOWER(po.note_nutritionnelle) LIKE ?';
+                $query .= ' LOWER(note_nutritionnelle) LIKE ?';
                 $params[] = strtolower('%'.$nutritionalScoreFilters.'%');
                 $multiFilter = true;
             }
@@ -151,7 +146,7 @@ class Model
                 {
                     $query .= ' WHERE ';
                 }
-                $query .= ' LOWER(po.ingredients) LIKE ?';
+                $query .= ' LOWER(ingredients) LIKE ?';
                 $params[] = strtolower('%'.$ingredientFilters.'%');
 				$multiFilter = true;
             }
@@ -185,7 +180,7 @@ class Model
 						{
 							$query .= ' WHERE ';
 						}
-						$query .= ' LOWER(po.ingredients) LIKE ?';
+						$query .= ' LOWER(ingredients) LIKE ?';
 						$params[] = strtolower('%'.$contains.'%');
 					}
 					else if($radioButton === 'notContains')
@@ -198,7 +193,7 @@ class Model
 						{
 							$query .= ' WHERE ';
 						}
-						$query .= ' LOWER(po.ingredients) NOT LIKE ?';
+						$query .= ' LOWER(ingredients) NOT LIKE ?';
 						$params[] = strtolower('%'.$contains.'%');
 					}
 				}
@@ -208,11 +203,11 @@ class Model
             //fonction de recherche
             if ($research !== null)
             {
-                $query .= ' WHERE LOWER(po.nom_produit) LIKE ?';
+                $query .= ' WHERE LOWER(nom_produit) LIKE ?';
                 $params[] = strtolower('%'.$research.'%');
             }
             
-            $query .= ' ORDER BY po.id_produit DESC ';
+            $query .= ' ORDER BY id_produit DESC ';
 
             //ajout d'une limite pour l'affichage du résultat
             if(isset($limit))
@@ -220,7 +215,7 @@ class Model
                 $query .= ' LIMIT ? ';
                 $params[] = $limit;
             }
-            
+
             if ($this->_dbh !== null)
             {
                 $prep = $this->_dbh->prepare($query);
@@ -298,7 +293,6 @@ class Model
             if ($this->_dbh !== null)
             {
                 $res = $this->_dbh->query($queryAddProduct);
-                //$result = $prep->fetch();
             }
 
             // Ajout produit avec pays
@@ -348,13 +342,9 @@ class Model
                 {
                     $res1 = $this->_dbh->query($countryQuery);
                     $res2 = $this->_dbh->query($hasCountryQuery);
-                    //$result = $prep->fetch();
                 }
 
             }
-
-
-
 
         }
 
@@ -455,31 +445,31 @@ class Model
 
         $query = '
             SELECT
-				po.id_produit,
-                po.nom_produit,
-                po.marque,
-                pa.nom as pays,
-                po.poids,
-                po.note_nutritionnelle,
-                po.date_creation,
-                po.energie,
-                po.graisse,
-                po.graisse_sature,
-                po.carbohydrate,
-                po.sucres,
-                po.fibres,
-                po.proteines,
-                po.sel,
-                po.sodium,
-                po.vitamin_a,
-                po.calcium,
-                po.fer,
-                po.nutrition_score
+				id_produit,
+                nom_produit,
+                marque,
+                ingredients,
+                poids,
+                note_nutritionnelle,
+                TO_CHAR(date_creation, \'DD/MM/YYYY\') AS date_creation,
+                energie,
+                graisse,
+                graisse_sature,
+                carbohydrate,
+                sucres,
+                fibres,
+                proteines,
+                sel,
+                sodium,
+                vitamin_a,
+                calcium,
+                fer,
+                nutrition_score
 			FROM
-				open_food_facts.produit po
-			INNER JOIN open_food_facts.possede_pays pp on po.id_produit = pp.id_produit 
-				INNER JOIN open_food_facts.pays pa on pp.id_pays = pa.id_pays
-			WHERE po.id_produit = ? ;';
+				open_food_facts.produit
+			WHERE id_produit = ? ;
+		';
+
         $params = [$chosenProductId];
 
         if ($this->_dbh !== null)
@@ -490,6 +480,38 @@ class Model
         }
         
         return $result;
+    }
+
+    function getCountryDetails($chosenProductId)
+    {
+        $result2 = null;
+
+        $countryQuery = '
+            SELECT
+              pa.nom AS pays				
+            FROM
+              open_food_facts.produit po
+            INNER JOIN
+              open_food_facts.possede_pays pp
+            ON
+              po.id_produit = pp.id_produit
+            INNER JOIN
+              open_food_facts.pays pa
+            ON
+              pp.id_pays = pa.id_pays
+            WHERE po.id_produit = ?            
+        ';
+
+        $params = [$chosenProductId];
+
+        if ($this->_dbh !== null)
+        {
+            $prep2 = $this->_dbh->prepare($countryQuery);
+            $prep2->execute($params);
+            $result2 = $prep2->fetchAll();
+        }
+
+        return $result2;
     }
 		
 }

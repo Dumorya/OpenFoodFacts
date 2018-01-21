@@ -109,13 +109,6 @@ form > label
 {
 	height: 75vh;
 	overflow:auto;
-	/*display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	padding-top: 30px;
-	align-items: center;
-	align-content: space-around;*/
 }
 
 footer
@@ -187,6 +180,60 @@ div > a:hover
 }
 
 /* ============== */
+/* BACK TO TOP BUTTON */
+/* ============== */
+
+a#backToTopButton{
+	width:60px;
+	height:60px;
+	background:#ad1457;
+	font:bold 13px Arial;
+	border-radius:50%;
+	border:none;
+	color:#fff;
+
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	z-index: 25;
+	opacity:1;
+
+	transition:all ease-in 0.2s;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	text-decoration: none;
+
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+
+}
+
+.fa-chevron-up
+{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+td > a > i
+{
+	color: #ad1457 !important;
+}
+
+a#backToTopButton:hover{
+	transition:all ease-in 0.2s;
+}
+a#backToTopButton.cInvisible{
+	bottom:-35px;
+	opacity:0;
+	transition:all ease-in 0.5s;
+}
+
+a#backToTopButton.cVisible{
+	bottom:20px;
+	opacity:1;
+}
+
+/* ============== */
 /* VALIDATE BUTTON */
 /* ============== */
 
@@ -207,7 +254,7 @@ div > a:hover
 	transition: .3s ease-out;
 }
 
-.btn, .filtersValidateButton, .addProductButton
+.btn, .filtersValidateButton, .addProductButton, .validateEditButton
 {
 	text-decoration: none;
 	color: black;
@@ -229,18 +276,18 @@ div > a:hover
 	outline: 0;
 }
 
-.filtersValidateButton:hover , .addProductButton:hover
+.filtersValidateButton:hover , .addProductButton:hover, .validateEditButton:hover
 {
 	background-color: #ffd54f;
 	transition: all .16s ease-in-out;
 }
 
-.addProductButton
+.addProductButton, .validateEditButton
 {
 	width: 300px;
 }
 
-.addProductButtonContainer
+.addProductButtonContainer, .validateEditButtonContainer
 {
 	margin-left: auto !important;
 	margin-right: auto !important;

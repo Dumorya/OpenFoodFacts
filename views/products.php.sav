@@ -1,5 +1,5 @@
 <?php
-    // TODO affichage du "50 derniers produits ajoutés", ajouter un bouton back to top, ajouter smooth scroll
+    // TODO centrer le "fliter par", affichage du "50 derniers produits ajoutés", ajouter un bouton back to top, ajouter smooth scroll
 ?>
 
 <div class="page-wrap">
@@ -12,17 +12,15 @@
                       <i class="fa fa-search" aria-hidden="true"></i>
                   </span>
                   <input type="text" class="form-control" placeholder="ex: Huile d'olive" aria-describedby="basic-addon1" name="research" id="validateButtonFiled">
-                  <input type="submit" value="Rechercher" class="validateButton btn" id="validateButton"/>
+                  <input type="submit" value="Rechercher" class="validateButton btn" id="validateButton" onclick="getValidateButtonFiled()"/>
 
               </div>
           </form>
         </div>
     </nav>
-
     <div id="filterButtonContainer">
         <button id="filterButton" onclick="showFiltersBlock()">Filtrer</button>
     </div>
-
     <div id="filtersBlock">
         <button id="crossButton" class="crossButton" onclick="closeFiltersBlock()">
             <img class="crossImage" src="public/images/cross.png"/>
@@ -30,7 +28,7 @@
 
         <div class="filters">
 
-            <h2 class="filterLabel">Filtrer par :</h2>
+            <h2>Filtrer par :</h2>
 
             <form method="post" action="index.php?action=products">
                 <?php
@@ -56,14 +54,12 @@
                     }
                 ?>
                 <div class="blockCenter">
-                    <div class="filterLabel">
-                        <label>Le produit </label>
-                        <input type="radio" name="radioButton" value="contains"/>
-                        <label for="contains"> contient </label>
-                        <input type="radio" name="radioButton"value="notContains"/>
-                        <label for="notContains"> ne contient pas </label>
-                    </div>
-					<input class="form-control" type="text" name="contains" placeholder="ex: Banane"/>
+					<label>Le produit </label>
+					<input type="radio" name="radioButton" value="contains"/>
+					<label for="contains"> contient </label>
+					<input type="radio" name="radioButton"value="notContains"/>
+					<label for="notContains"> ne contient pas </label>
+					<input type="text" name="contains"/>
                 </div>
 
                 <div class="filtersValidateButtonContainer">
@@ -88,90 +84,93 @@
                 <button id="crossButton" class="crossButton close">
                     <img class="crossImage" src="public/images/cross.png"/>
                 </button>
-                <h2>Ajout d'un produit</h2>
+                <h2 class="filterLabel">Ajout d'un produit</h2>
                 
-                <form method="post" action="index.php?action=products" id="modalForm">
-                    <h3>Informations générales</h3>
+                <form method="post" action="index.php?action=products">
+                    <div>
+                        <h3>Informations générales</h3>
 
-                    <label>Nom du créateur (*) :</label>
-                    <input type="text" name="addProductCreatorName" required/>
+                        <label>Nom du créateur (*) :</label>
+                        <input class="form-control" type="text" name="addProductCreatorName" required/>
 
-                    <label>Nom du produit (*) :</label>
-                    <input type="text" name="addProductProductName" required/>
+                        <label>Nom du produit (*) :</label>
+                        <input class="form-control" type="text" name="addProductProductName" required/>
 
-                    <label>Marque (*) :</label>
-                    <input type="text" name="addProductBrand" required/>
+                        <label>Marque (*) :</label>
+                        <input class="form-control" type="text" name="addProductBrand" required/>
 
-                    <label>Pays (*) :</label>
-                    <input type="text" name="addProductCountry" required/>
+                        <label>Pays (*) :</label>
+                        <input class="form-control" type="text" name="addProductCountry" required/>
 
-                    <label>Poids :</label>
-                    <input type="text" name="addProductWeight"/>
+                        <label>Poids :</label>
+                        <input class="form-control" type="text" name="addProductWeight"/>
 
-                    <label>Note nutritionnelle :</label>
-                    <select type="text" name="addProductNutritionalGrade">
-                        <option>Aucune</option>
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                        <option>E</option>
-                    </select>
+                        <label>Note nutritionnelle :</label>
+                        <select class="form-control" type="text" name="addProductNutritionalGrade">
+                            <option>Aucune</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
 
-                    <label>Energie :</label>
-                    <input type="text" name="addProductEnergy"/>
+                        <label>Energie :</label>
+                        <input class="form-control" type="text" name="addProductEnergy"/>
 
-                    <p>(*) Saisie obligatoire</p>
+                        <p>(*) Saisie obligatoire</p>
+                    </div>
 
                     <hr>
 
-                    <h3>Composition du produit</h3>
+                    <div>
+                        <h3>Composition du produit</h3>
 
-                    <label>Graisse :</label>
-                    <input type="text" name="addProductFat"/>
+                        <label>Graisse :</label>
+                        <input class="form-control" type="text" name="addProductFat"/>
 
-                    <label>Graisse saturée :</label>
-                    <input type="text" name="addProductSaturatedFat"/>
+                        <label>Graisse saturée :</label>
+                        <input class="form-control" type="text" name="addProductSaturatedFat"/>
 
-                    <label>Sucres :</label>
-                    <input type="text" name="addProductSugar"/>
+                        <label>Sucres :</label>
+                        <input class="form-control" type="text" name="addProductSugar"/>
 
-                    <label>Carbohydrate :</label>
-                    <input type="text" name="addProductCarbohydrate"/>
+                        <label>Carbohydrate :</label>
+                        <input class="form-control" type="text" name="addProductCarbohydrate"/>
 
-                    <label>Protéines :</label>
-                    <input type="text" name="addProductProteines"/>
+                        <label>Protéines :</label>
+                        <input class="form-control" type="text" name="addProductProteines"/>
 
-                    <label>Sel :</label>
-                    <input type="text" name="addProductSalt"/>
+                        <label>Sel :</label>
+                        <input class="form-control" type="text" name="addProductSalt"/>
 
-                    <label>Sodium :</label>
-                    <input type="text" name="addProductSodium"/>
+                        <label>Sodium :</label>
+                        <input class="form-control" type="text" name="addProductSodium"/>
 
-                    <label>Vitamine A :</label>
-                    <input type="text" name="addProductAVitamin"/>
+                        <label>Vitamine A :</label>
+                        <input class="form-control" type="text" name="addProductAVitamin"/>
 
-                    <label>Vitamine C :</label>
-                    <input type="text" name="addProductCVitamin"/>
+                        <label>Vitamine C :</label>
+                        <input class="form-control" type="text" name="addProductCVitamin"/>
 
-                    <label>Calcium :</label>
-                    <input type="text" name="addProductCalcium"/>
+                        <label>Calcium :</label>
+                        <input class="form-control" type="text" name="addProductCalcium"/>
 
-                    <label>Fer :</label>
-                    <input type="text" name="addProductIron"/>
+                        <label>Fer :</label>
+                        <input class="form-control" type="text" name="addProductIron"/>
 
-                    <label>Fibres :</label>
-                    <input type="text" name="addProductFibers"/>
+                        <label>Fibres :</label>
+                        <input class="form-control" type="text" name="addProductFibers"/>
 
-                    <label>Ingrédients :</label>
-                    <textarea type="text" name="addProductIngredients"></textarea>
+                        <label>Ingrédients :</label>
+                        <input class="form-control" type="text" name="addProductIngredients"/>
 
-                    <label>Valeur nutritionnelle :</label>
-                    <input type="text" name="addProductNutritionScore"/>
-
+                        <label>Valeur nutritionnelle :</label>
+                        <input class="form-control" type="text" name="addProductNutritionScore"/>
+                    </div>
 
                     <input type="submit" value="OK"/>
-                    <input type="button" value="Annuler" id="modalCancel"/>
+                    <input type="button" value="Annuler"/>
                 </form>
             </div>
 
@@ -196,7 +195,6 @@
                         <th>Ingrédients</th>
                         <th>Note nutritionnelle</th>
                         <th>Plus de détails</th>
-                        <th>Editer le produit</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -209,7 +207,6 @@
                             echo '<td>'.$product['ingredients'].'</td>';
                             echo '<td class="uppercase">'.$product['nutritionalGrade'].'</td>';
                             echo '<td><a href="index.php?action=details&chosenProductId='.$product['productId'].'" target="_blank"><i class="fa fa-plus" aria-hidden="true"></i></a></td>';
-                            echo '<td><a href="index.php?action=edit&chosenProductId='.$product['productId'].'" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>';
                             echo '</tr>';
                         }
                     ?>
@@ -218,7 +215,4 @@
             <?php } ?>
         </div>
     </div>
-
-    <a id="backToTopButton" class="cInvisible" href="#filtersValidateButton"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></a>
-
 </div>

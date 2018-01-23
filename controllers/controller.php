@@ -65,7 +65,41 @@ function getProducts()
     {
         $limit = 50;
     }
-            
+	
+    $model       = new Model();
+    $rows        = $model->getProducts(
+		$creatorFilters,
+		$brandFilters,
+		$nutritionalScoreFilters,
+		$ingredientFilters,
+		$countryFilters,
+		$research,
+		$limit,
+		$contains,
+		$radioButton
+	);
+    $filterCarac = $model->getFilters();
+
+    $products = array();
+    if (count($rows) > 0)
+    {
+        foreach ($rows as $row)
+        {
+            $products[] = array(
+                'productId'        => $row['id_produit'],
+                'ingredients'      => $row['ingredients'],
+                'brand'            => $row['marque'],
+                'name'             => $row['nom_produit'],
+                'nutritionalGrade' => $row['note_nutritionnelle']
+            );
+        }
+    }
+	
+    require ('views/products.php');
+}
+
+function addProducts()
+{
     /**
      *  Ajout d'un produit
      */
@@ -260,64 +294,39 @@ function getProducts()
     {
         $addProductNutritionScore = 'null';
     }
-	
-    $model       = new Model();
-    $rows        = $model->getProducts(
-		$creatorFilters,
-		$brandFilters,
-		$nutritionalScoreFilters,
-		$ingredientFilters,
-		$countryFilters,
-		$research,
-		$limit,
-		$contains,
-		$radioButton,
-		$addProductCreatorName,
-		$addProductProductName,
-		$addProductBrand,
-        $addProductCountry,
-		$addProductWeight,
-		$addProductNutritionalGrade,
-		$addProductEnergy,
-		$addProductFat,
-		$addProductSaturatedFat,
-		$addProductSugar,
-		$addProductCarbohydrate,
-		$addProductProteines,
-		$addProductSalt,
-		$addProductSodium,
-		$addProductAVitamin,
-		$addProductCVitamin,
-		$addProductCalcium,
-		$addProductIron,
-		$addProductIngredients,
-		$addProductFibers,
-		$addProductNutritionScore
-	);
-    $filterCarac = $model->getFilters();
 
-    $products = array();
-    if (count($rows) > 0)
-    {
-        foreach ($rows as $row)
-        {
-            $products[] = array(
-                'productId'        => $row['id_produit'],
-                'ingredients'      => $row['ingredients'],
-                'brand'            => $row['marque'],
-                'name'             => $row['nom_produit'],
-                'nutritionalGrade' => $row['note_nutritionnelle']
-            );
-        }
-    }
-	
-    require ('views/products.php');
+    $model = new Model();
+    $res = $model->addProducts(
+        $addProductCreatorName,
+        $addProductProductName,
+        $addProductBrand,
+        $addProductCountry,
+        $addProductWeight,
+        $addProductNutritionalGrade,
+        $addProductEnergy,
+        $addProductFat,
+        $addProductSaturatedFat,
+        $addProductSugar,
+        $addProductCarbohydrate,
+        $addProductProteines,
+        $addProductSalt,
+        $addProductSodium,
+        $addProductAVitamin,
+        $addProductCVitamin,
+        $addProductCalcium,
+        $addProductIron,
+        $addProductIngredients,
+        $addProductFibers,
+        $addProductNutritionScore
+    );
+
+    header('Location: index.php?action=products.php');
 }
 
 function getDetails()
 {
     $countries = array();
-    $chosenProductId = $_GET['chosenProductId'];    
+    $chosenProductId = $_GET['chosenProductId'];
     $model = new Model();
     $detail1 = $model->getDetails($chosenProductId);
     $detail2 = $model->getCountryDetails($chosenProductId);
@@ -325,12 +334,202 @@ function getDetails()
     require ('views/details.php');
 }
 
-function edit()
+function getOldValues()
 {
+    // affichage des anciennes valeurs dans les inputs
     $chosenProductId = $_GET['chosenProductId'];
     $model = new Model();
     $detail1 = $model->getDetails($chosenProductId);
     $detail2 = $model->getCountryDetails($chosenProductId);
 
     require ('views/edit.php');
+}
+
+function edit()
+{
+    // édition des valeurs
+    $editProductCountry			    = null;
+    $editProductWeight			    = null;
+    $editProductNutritionalGrade    = null;
+    $editProductEnergy			    = null;
+    $editProductFat				    = null;
+    $editProductSaturatedFat		= null;
+    $editProductSugar			    = null;
+    $editProductCarbohydrate		= null;
+    $editProductProteines		    = null;
+    $editProductSalt				= null;
+    $editProductSodium			    = null;
+    $editProductAVitamin			= null;
+    $editProductCVitamin			= null;
+    $editProductCalcium			    = null;
+    $editProductIron				= null;
+    $editProductIngredients		    = null;
+    $editProductFibers			    = null;
+    $editProductNutritionScore	    = null;
+
+
+    if(isset($_POST['chosenProductId']))
+    {
+        $chosenProductId = ($_POST['chosenProductId'] != '') ? $_POST['chosenProductId'] : null;
+    }
+    if(isset($_POST['editProductWeight']))
+    {
+        $editProductWeight = ($_POST['editProductWeight'] != '') ? $_POST['editProductWeight'] : null;
+    }
+    if(isset($_POST['editProductCountry']))
+    {
+        $editProductCountry = ($_POST['editProductCountry'] != '') ? $_POST['editProductCountry'] : null;
+    }
+    if(isset($_POST['editProductNutritionalGrade']))
+    {
+        $editProductNutritionalGrade = ($_POST['editProductNutritionalGrade'] != '') ? $_POST['editProductNutritionalGrade'] : null;
+    }
+    if(isset($_POST['editProductEnergy']))
+    {
+        $editProductEnergy = ($_POST['editProductEnergy'] != '') ? $_POST['editProductEnergy'] : null;
+    }
+    if(isset($_POST['editProductFat']))
+    {
+        $editProductFat = ($_POST['editProductFat'] != '') ? $_POST['editProductFat'] : null;
+    }
+    if(isset($_POST['editProductSaturatedFat']))
+    {
+        $editProductSaturatedFat = ($_POST['editProductSaturatedFat'] != '') ? $_POST['editProductSaturatedFat'] : null;
+    }
+    if(isset($_POST['editProductSugar']))
+    {
+        $editProductSugar = ($_POST['editProductSugar'] != '') ? $_POST['editProductSugar'] : null;
+    }
+    if(isset($_POST['editProductCarbohydrate']))
+    {
+        $editProductCarbohydrate = ($_POST['editProductCarbohydrate'] != '') ? $_POST['editProductCarbohydrate'] : null;
+    }
+    if(isset($_POST['editProductProteines']))
+    {
+        $editProductProteines = ($_POST['editProductProteines'] != '') ? $_POST['editProductProteines'] : null;
+    }
+    if(isset($_POST['editProductSalt']))
+    {
+        $editProductSalt	 = ($_POST['editProductSalt'] != '') ? $_POST['editProductSalt'] : null;
+    }
+    if(isset($_POST['editProductSodium']))
+    {
+        $editProductSodium = ($_POST['editProductSodium'] != '') ? $_POST['editProductSodium'] : null;
+    }
+    if(isset($_POST['editProductAVitamin']))
+    {
+        $editProductAVitamin = ($_POST['editProductAVitamin'] != '') ? $_POST['editProductAVitamin'] : null;
+    }
+    if(isset($_POST['editProductCVitamin']))
+    {
+        $editProductCVitamin = ($_POST['editProductCVitamin'] != '') ? $_POST['editProductCVitamin'] : null;
+    }
+    if(isset($_POST['editProductCalcium']))
+    {
+        $editProductCalcium	 = ($_POST['editProductCalcium'] != '') ? $_POST['editProductCalcium'] : null;
+    }
+    if(isset($_POST['editProductIron']))
+    {
+        $editProductIron = ($_POST['editProductIron'] != '') ? $_POST['editProductIron'] : null;
+    }
+    if(isset($_POST['editProductIngredients']))
+    {
+        $editProductIngredients = ($_POST['editProductIngredients'] != '') ? $_POST['editProductIngredients'] : null;
+    }
+    if(isset($_POST['editProductFibers']))
+    {
+        $editProductFibers = ($_POST['editProductFibers'] != '') ? $_POST['editProductFibers'] : null;
+    }
+    if(isset($_POST['editProductNutritionScore']))
+    {
+        $editProductNutritionScore = ($_POST['editProductNutritionScore'] != '') ? $_POST['editProductNutritionScore'] : null;
+    }
+
+    $nutritionalGradesAvailable = array('A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e');
+
+    if(!in_array($editProductNutritionalGrade, $nutritionalGradesAvailable))
+    {
+        $editProductNutritionalGrade = '';
+    }
+    if($editProductEnergy === null)
+    {
+        $editProductEnergy = 'null';
+    }
+    if($editProductFat === null)
+    {
+        $editProductFat = 'null';
+    }
+    if($editProductSaturatedFat === null)
+    {
+        $editProductSaturatedFat = 'null';
+    }
+    if($editProductSugar === null)
+    {
+        $editProductSugar = 'null';
+    }
+    if($editProductCarbohydrate === null)
+    {
+        $editProductCarbohydrate = 'null';
+    }
+    if($editProductProteines === null)
+    {
+        $editProductProteines = 'null';
+    }
+    if($editProductSalt === null)
+    {
+        $editProductSalt = 'null';
+    }
+    if($editProductSodium === null)
+    {
+        $editProductSodium = 'null';
+    }
+    if($editProductAVitamin === null)
+    {
+        $editProductAVitamin = 'null';
+    }
+    if($editProductCVitamin === null)
+    {
+        $editProductCVitamin = 'null';
+    }
+    if($editProductCalcium === null)
+    {
+        $editProductCalcium = 'null';
+    }
+    if($editProductIron === null)
+    {
+        $editProductIron = 'null';
+    }
+    if($editProductFibers === null)
+    {
+        $editProductFibers = 'null';
+    }
+    if($editProductNutritionScore === null)
+    {
+        $editProductNutritionScore = 'null';
+    }
+
+    $model = new Model();
+    $res1 = $model->edit(
+        $editProductWeight,
+        $editProductNutritionalGrade,
+        $editProductEnergy,
+        $editProductFat,
+        $editProductSaturatedFat,
+        $editProductSugar,
+        $editProductCarbohydrate,
+        $editProductProteines,
+        $editProductSalt,
+        $editProductSodium,
+        $editProductAVitamin,
+        $editProductCVitamin,
+        $editProductCalcium,
+        $editProductIron,
+        $editProductIngredients,
+        $editProductFibers,
+        $editProductNutritionScore,
+        $chosenProductId
+    );
+//    $res2 = $model->editCountry($editProductCountry,$chosenProductId);
+
+    header('Location: index.php?action=products');
 }

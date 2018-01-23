@@ -26,8 +26,14 @@
                     case 'products':
                         getProducts();
                     break;
+                    case 'addProducts':
+                        addProducts();
+                    break;
                     case 'details':
                         getDetails();
+                    break;
+                    case 'getOldValues':
+                        getOldValues();
                     break;
                     case 'edit':
                         edit();

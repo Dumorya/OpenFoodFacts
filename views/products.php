@@ -90,7 +90,7 @@
                 </button>
                 <h2>Ajout d'un produit</h2>
                 
-                <form method="post" action="index.php?action=products" id="modalForm">
+                <form method="post" action="index.php?action=addProducts" id="modalForm">
                     <h3>Informations générales</h3>
 
                     <label>Nom du créateur (*) :</label>
@@ -106,10 +106,10 @@
                     <input type="text" name="addProductCountry" required/>
 
                     <label>Poids :</label>
-                    <input type="text" name="addProductWeight"/>
+                    <input type="number" min="0" name="addProductWeight"/>
 
                     <label>Note nutritionnelle :</label>
-                    <select type="text" name="addProductNutritionalGrade">
+                    <select name="addProductNutritionalGrade">
                         <option>Aucune</option>
                         <option>A</option>
                         <option>B</option>
@@ -128,46 +128,46 @@
                     <h3>Composition du produit</h3>
 
                     <label>Graisse :</label>
-                    <input type="text" name="addProductFat"/>
+                    <input type="number" min="0" name="addProductFat"/>
 
                     <label>Graisse saturée :</label>
-                    <input type="text" name="addProductSaturatedFat"/>
+                    <input type="number" min="0" name="addProductSaturatedFat"/>
 
                     <label>Sucres :</label>
-                    <input type="text" name="addProductSugar"/>
+                    <input type="number" min="0" name="addProductSugar"/>
 
                     <label>Carbohydrate :</label>
-                    <input type="text" name="addProductCarbohydrate"/>
+                    <input type="number" min="0" name="addProductCarbohydrate"/>
 
                     <label>Protéines :</label>
-                    <input type="text" name="addProductProteines"/>
+                    <input type="number" min="0" name="addProductProteines"/>
 
                     <label>Sel :</label>
-                    <input type="text" name="addProductSalt"/>
+                    <input type="number" min="0" name="addProductSalt"/>
 
                     <label>Sodium :</label>
-                    <input type="text" name="addProductSodium"/>
+                    <input type="number" min="0" name="addProductSodium"/>
 
                     <label>Vitamine A :</label>
-                    <input type="text" name="addProductAVitamin"/>
+                    <input type="number" min="0" name="addProductAVitamin"/>
 
                     <label>Vitamine C :</label>
-                    <input type="text" name="addProductCVitamin"/>
+                    <input type="number" min="0" name="addProductCVitamin"/>
 
                     <label>Calcium :</label>
-                    <input type="text" name="addProductCalcium"/>
+                    <input type="number" min="0" name="addProductCalcium"/>
 
                     <label>Fer :</label>
-                    <input type="text" name="addProductIron"/>
+                    <input type="number" min="0" name="addProductIron"/>
 
                     <label>Fibres :</label>
-                    <input type="text" name="addProductFibers"/>
+                    <input type="number" min="0" name="addProductFibers"/>
 
                     <label>Ingrédients :</label>
                     <textarea type="text" name="addProductIngredients"></textarea>
 
                     <label>Valeur nutritionnelle :</label>
-                    <input type="text" name="addProductNutritionScore"/>
+                    <input type="number" min="0" name="addProductNutritionScore"/>
 
 
                     <input type="submit" value="OK"/>
@@ -208,8 +208,8 @@
                             echo '<td>'.$product['brand'].'</td>';
                             echo '<td>'.$product['ingredients'].'</td>';
                             echo '<td class="uppercase">'.$product['nutritionalGrade'].'</td>';
-                            echo '<td><a href="index.php?action=details&chosenProductId='.$product['productId'].'" target="_blank"><i class="fa fa-plus" aria-hidden="true"></i></a></td>';
-                            echo '<td><a href="index.php?action=edit&chosenProductId='.$product['productId'].'" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>';
+                            echo '<td><a href="index.php?action=details&chosenProductId='.$product['productId'].'"><i class="fa fa-plus" aria-hidden="true"></i></a></td>';
+                            echo '<td><a href="index.php?action=getOldValues&chosenProductId='.$product['productId'].'"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>';
                             echo '</tr>';
                         }
                     ?>

@@ -7,9 +7,9 @@
  */
 
 // Pour voir l'entierté d'un var dump
-/*ini_set("xdebug.var_display_max_children", -1);
+ini_set("xdebug.var_display_max_children", -1);
 ini_set("xdebug.var_display_max_data", -1);
-ini_set("xdebug.var_display_max_depth", -1);*/
+ini_set("xdebug.var_display_max_depth", -1);
 
 include_once ('connect.php');
 
@@ -54,28 +54,8 @@ class Model
 		$research,
 		$limit,
 		$contains,
-		$radioButton,
-		$addProductCreatorName,
-		$addProductProductName,
-		$addProductBrand,
-        $addProductCountry,
-		$addProductWeight,
-		$addProductNutritionalGrade,
-		$addProductEnergy,
-		$addProductFat,
-		$addProductSaturatedFat,
-		$addProductSugar,
-		$addProductCarbohydrate,
-		$addProductProteines,
-		$addProductSalt,
-		$addProductSodium,
-		$addProductAVitamin,
-		$addProductCVitamin,
-		$addProductCalcium,
-		$addProductIron,
-		$addProductIngredients,
-		$addProductFibers,
-		$addProductNutritionScore)
+		$radioButton
+        )
     {
 
         $rows = null;
@@ -223,132 +203,160 @@ class Model
                 $rows = $prep->fetchAll();
             }
 
+        }
 
-            //Ajout produit sans pays
-            
-            $queryAddProduct = '
-			INSERT INTO 
-				open_food_facts.produit
-				(createur,
-				nom_produit,
-				marque,
-				poids,
-			    note_nutritionnelle,
-			    energie,
-			    graisse,
-			    graisse_sature,
-			    carbohydrate,
-			    sucres,
-			    fibres,
-			    proteines,
-			    sel,
-			    sodium,
-			    vitamin_a,
-			    vitamin_c,
-			    calcium,
-			    fer,
-			    nutrition_score,
-			    ingredients,
-				date_creation,
-				date_modification) 
-			SELECT 
-				\''.$addProductCreatorName.'\',
-				\''.$addProductProductName.'\',
-				\''.$addProductBrand.'\',
-				\''.$addProductWeight.'\',
-				\''.$addProductNutritionalGrade.'\',
-				'.$addProductEnergy.',
-				'.$addProductFat.',
-				'.$addProductSaturatedFat.',
-				'.$addProductCarbohydrate.',
-				'.$addProductSugar.',
-				'.$addProductFibers.',
-				'.$addProductProteines.',
-				'.$addProductSalt.',
-				'.$addProductSodium.',
-				'.$addProductAVitamin.',
-				'.$addProductCVitamin.',
-				'.$addProductCalcium.',
-				'.$addProductIron.',
-				'.$addProductNutritionScore.',
-				\''.$addProductIngredients.'\',
-				 now(),
-				 now()
-			FROM 
-				open_food_facts.produit
-			WHERE NOT EXISTS
-				(SELECT 
-					1
-				FROM 
-					open_food_facts.produit 
-				WHERE 
-					LOWER(createur) = \''.strtolower($addProductCreatorName).'\' 
-				AND 
-					LOWER(nom_produit) = \''.strtolower($addProductProductName).'\' 
-				AND 
-					LOWER(marque) = \''.strtolower($addProductBrand).'\'
-				) 
-			LIMIT 1';
+        return $rows;
+    }
+
+    public function addProducts(
+		$addProductCreatorName,
+		$addProductProductName,
+		$addProductBrand,
+        $addProductCountry,
+		$addProductWeight,
+		$addProductNutritionalGrade,
+		$addProductEnergy,
+		$addProductFat,
+		$addProductSaturatedFat,
+		$addProductSugar,
+		$addProductCarbohydrate,
+		$addProductProteines,
+		$addProductSalt,
+		$addProductSodium,
+		$addProductAVitamin,
+		$addProductCVitamin,
+		$addProductCalcium,
+		$addProductIron,
+		$addProductIngredients,
+		$addProductFibers,
+		$addProductNutritionScore
+    )
+    {
+
+        //Ajout produit sans pays
+
+        $queryAddProduct = '
+        INSERT INTO 
+            open_food_facts.produit
+            (createur,
+            nom_produit,
+            marque,
+            poids,
+            note_nutritionnelle,
+            energie,
+            graisse,
+            graisse_sature,
+            carbohydrate,
+            sucres,
+            fibres,
+            proteines,
+            sel,
+            sodium,
+            vitamin_a,
+            vitamin_c,
+            calcium,
+            fer,
+            nutrition_score,
+            ingredients,
+            date_creation,
+            date_modification) 
+        SELECT 
+            \''.$addProductCreatorName.'\',
+            \''.$addProductProductName.'\',
+            \''.$addProductBrand.'\',
+            \''.$addProductWeight.'\',
+            \''.$addProductNutritionalGrade.'\',
+            '.$addProductEnergy.',
+            '.$addProductFat.',
+            '.$addProductSaturatedFat.',
+            '.$addProductCarbohydrate.',
+            '.$addProductSugar.',
+            '.$addProductFibers.',
+            '.$addProductProteines.',
+            '.$addProductSalt.',
+            '.$addProductSodium.',
+            '.$addProductAVitamin.',
+            '.$addProductCVitamin.',
+            '.$addProductCalcium.',
+            '.$addProductIron.',
+            '.$addProductNutritionScore.',
+            \''.$addProductIngredients.'\',
+             now(),
+             now()
+        FROM 
+            open_food_facts.produit
+        WHERE NOT EXISTS
+            (SELECT 
+                1
+            FROM 
+                open_food_facts.produit 
+            WHERE 
+                LOWER(createur) = \''.strtolower($addProductCreatorName).'\' 
+            AND 
+                LOWER(nom_produit) = \''.strtolower($addProductProductName).'\' 
+            AND 
+                LOWER(marque) = \''.strtolower($addProductBrand).'\'
+            ) 
+        LIMIT 1';
+
+        if ($this->_dbh !== null)
+        {
+            $res = $this->_dbh->query($queryAddProduct);
+        }
+
+
+
+        // Ajout produit avec pays
+
+        $countriesResQuery = array();
+        $countriesResQuery = str_word_count($addProductCountry, 1);
+
+        foreach($countriesResQuery as $country)
+        {
+            $countryQuery = '
+            INSERT INTO
+              open_food_facts.pays(nom)
+            SELECT
+              \''.$country.'\'
+            FROM
+              open_food_facts.pays
+            WHERE NOT EXISTS
+              (SELECT
+                  *
+              FROM
+                  open_food_facts.pays
+              WHERE
+                  LOWER(nom) = LOWER(\''.$country.'\'))
+            LIMIT 1;';
+
+            $hasCountryQuery = '
+            INSERT INTO
+              open_food_facts.possede_pays(id_pays,id_produit)
+            SELECT
+              (SELECT
+                id_pays
+              FROM
+                open_food_facts.pays
+              WHERE
+                LOWER(nom) = LOWER(\''.$country.'\')
+              LIMIT 1),
+            (SELECT
+              id_produit
+            FROM
+              open_food_facts.produit
+            ORDER BY
+              id_produit
+            DESC
+            LIMIT 1)';
 
             if ($this->_dbh !== null)
             {
-                $res = $this->_dbh->query($queryAddProduct);
-            }
-
-            // Ajout produit avec pays
-
-            $countriesResQuery = array();
-            $countriesResQuery = str_word_count($addProductCountry, 1);
-
-            foreach($countriesResQuery as $country)
-            {
-                $countryQuery = '
-                INSERT INTO
-                  open_food_facts.pays(nom)
-                SELECT
-                  \''.$country.'\'
-                FROM
-                  open_food_facts.pays
-                WHERE NOT EXISTS
-                  (SELECT
-                      *
-                  FROM
-                      open_food_facts.pays
-                  WHERE
-                      LOWER(nom) = LOWER(\''.$country.'\'))
-                LIMIT 1;';
-
-                $hasCountryQuery = '
-                INSERT INTO
-                  open_food_facts.possede_pays(id_pays,id_produit)
-                SELECT
-                  (SELECT
-                    id_pays
-                  FROM
-                    open_food_facts.pays
-                  WHERE
-                    LOWER(nom) = LOWER(\''.$country.'\')
-                  LIMIT 1),
-                (SELECT
-                  id_produit
-                FROM
-                  open_food_facts.produit
-                ORDER BY
-                  id_produit
-                DESC
-                LIMIT 1)';
-
-                if ($this->_dbh !== null)
-                {
-                    $res1 = $this->_dbh->query($countryQuery);
-                    $res2 = $this->_dbh->query($hasCountryQuery);
-                }
-
+                $res1 = $this->_dbh->query($countryQuery);
+                $res2 = $this->_dbh->query($hasCountryQuery);
             }
 
         }
 
-        return $rows;
     }
 
     /**
@@ -448,6 +456,7 @@ class Model
 				id_produit,
                 nom_produit,
                 marque,
+                createur,
                 ingredients,
                 poids,
                 note_nutritionnelle,
@@ -462,6 +471,7 @@ class Model
                 sel,
                 sodium,
                 vitamin_a,
+                vitamin_c,
                 calcium,
                 fer,
                 nutrition_score
@@ -513,5 +523,93 @@ class Model
 
         return $result2;
     }
-		
+
+    function edit(
+        $editProductWeight,
+        $editProductNutritionalGrade,
+        $editProductEnergy,
+        $editProductFat,
+        $editProductSaturatedFat,
+        $editProductSugar,
+        $editProductCarbohydrate,
+        $editProductProteines,
+        $editProductSalt,
+        $editProductSodium,
+        $editProductAVitamin,
+        $editProductCVitamin,
+        $editProductCalcium,
+        $editProductIron,
+        $editProductIngredients,
+        $editProductFibers,
+        $editProductNutritionScore,
+        $chosenProductId
+    )
+    {
+        $editQuery = '
+            UPDATE
+              open_food_facts.produit
+            SET
+              poids = \''.$editProductWeight.'\',
+              note_nutritionnelle = \''.$editProductNutritionalGrade.'\',
+              energie = '.$editProductEnergy.',
+              graisse = '.$editProductFat.',
+              graisse_sature = '.$editProductSaturatedFat.',
+              carbohydrate = '.$editProductCarbohydrate.',
+              sucres = '.$editProductSugar.',
+              fibres = '.$editProductFibers.',
+              proteines = '.$editProductProteines.',
+              sel = '.$editProductSalt.',
+              sodium = '.$editProductSodium.',
+              vitamin_a = '.$editProductAVitamin.',
+              vitamin_c = '.$editProductCVitamin.',
+              calcium = '.$editProductCalcium.',
+              fer = '.$editProductIron.',
+              nutrition_score = '.$editProductNutritionScore.',
+              ingredients = \''.$editProductIngredients.'\',
+              date_modification = now()
+            WHERE
+              id_produit = '.$chosenProductId.';
+        ';
+
+        if ($this->_dbh !== null)
+        {
+            $res1 = $this->_dbh->query($editQuery);
+        }
+
+    }
+
+//    function editCountry($editProductCountry,$chosenProductId)
+//    {
+//        $editCountryQuery1 = '
+//            DELETE FROM
+//              open_food_facts.possede_pays
+//            WHERE
+//              id_produit = \''.$chosenProductId.'\';
+//        ';
+//
+//        $editCountryQuery2 = '
+//            INSERT INTO
+//              open_food_facts.pays(nom)
+//            SELECT
+//              nom_pays
+//            FROM
+//              open_food_facts.pays
+//            WHERE NOT EXISTS
+//              (SELECT
+//                *
+//              FROM
+//                open_food_facts.pays
+//              WHERE
+//                LOWER(nom) = LOWER(nom_pays)
+//              )
+//            LIMIT 1;
+//        ';
+//
+//        if ($this->_dbh !== null)
+//        {
+//            $res1 = $this->_dbh->query($editCountryQuery1);
+//            $res2 = $this->_dbh->query($editCountryQuery2);
+//        }
+//    }
+
 }

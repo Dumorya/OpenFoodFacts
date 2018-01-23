@@ -1,9 +1,12 @@
 
 <?php
     echo '<h2>Détails de '.$detail1['nom_produit'].' :</h2>';
-    echo '
-    <table>
-        <tbody>';
+        //echo '<input type="hidden" name="chosenProductId" value="'.$detail1['id_produit'].'"/>';
+        echo '<a href="index.php?action=products"><i class="fa fa-long-arrow-left fa-4x" aria-hidden="true"></i></a>';
+        echo '<div class="tableContainer">';
+        echo '
+            <table>
+                <tbody>';
             echo '<tr>';
             echo 	'<th>Nom du produit</th>';
             echo 	'<td>'.$detail1['nom_produit'].'</td>';
@@ -11,6 +14,10 @@
             echo '<tr>';
             echo 	'<th>Marque</th>';
             echo 	'<td>'.$detail1['marque'].'</td>';
+            echo '</tr>';
+            echo '<tr>';
+            echo 	'<th>Créateur</th>';
+            echo 	'<td>'.$detail1['createur'].'</td>';
             echo '</tr>';
             echo '<tr>';
             echo 	'<th>Pays</th>';
@@ -85,6 +92,10 @@
             echo 	'<td>'.$detail1['vitamin_a'].'</td>';
             echo '</tr>';
             echo '<tr>';
+            echo 	'<th>Vitamine C</th>';
+            echo 	'<td>'.$detail1['vitamin_c'].'</td>';
+            echo '</tr>';
+            echo '<tr>';
             echo 	'<th>Calcium</th>';
             echo 	'<td>'.$detail1['calcium'].'</td>';
             echo '</tr>';
@@ -97,6 +108,7 @@
             echo 	'<td>'.$detail1['nutrition_score'].'</td>';
             echo '</tr>';
     echo'</tbody></table>';
+        echo '</div>';
 
 ?>
 

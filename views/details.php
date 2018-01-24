@@ -1,6 +1,6 @@
 
 <?php
-    echo '<h2>Détails de '.$detail1['nom_produit'].' :</h2>';
+    echo '<h2 class="detailsTitle">Détails de '.$detail1['nom_produit'].' :</h2>';
         //echo '<input type="hidden" name="chosenProductId" value="'.$detail1['id_produit'].'"/>';
         echo '<a href="index.php?action=products"><i class="fa fa-long-arrow-left fa-4x" aria-hidden="true"></i></a>';
         echo '<div class="tableContainer">';

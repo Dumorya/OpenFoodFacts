@@ -336,7 +336,7 @@ a#backToTopButton.cVisible{
 	transform: translate(-50%, -50%);
 }
 
-.btn:hover, filtersValidateButton:hover
+.btn:hover, .filtersValidateButton:hover, .okayButtonModal:hover
 {
 	background-color: #ffd54f;
 }
@@ -435,6 +435,12 @@ tr:hover
     height: 80vh;
 }
 
+#modalForm
+{
+	overflow: auto;
+	padding-bottom: 50px;
+}
+
 /* The Close Button */
 .close {
     color: #aaaaaa;
@@ -449,6 +455,92 @@ tr:hover
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.wrapper
+{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+	grid-auto-rows: minmax(100%, auto);
+}
+
+.firstGrid
+{
+	grid-column: 1 / 2;
+	grid-row: 1;
+}
+
+.secondGrid
+{
+	grid-column: 2 / 2;
+	grid-row: 1;
+}
+
+.modalTitle
+{
+	text-align: center;
+	padding-bottom: 20px;
+	font-size: 2.2em;
+}
+
+.firstGrid > h3, .secondGrid > h3
+{
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.firstGrid > p
+{
+	color: red;
+	font-size: 0.8em;
+}
+
+.okayButtonModal, .cancelButtonModal
+{
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	letter-spacing: .5px;
+	-webkit-transition: .2s ease-out;
+	transition: .2s ease-out;
+	cursor: pointer;
+	border: none;
+	border-radius: 2px;
+	display: inline-block;
+	line-height: 36px;
+	text-transform: uppercase;
+	vertical-align: middle;
+	-webkit-tap-highlight-color: transparent;
+	font-size: 1rem;
+	outline: 0;
+	padding: 0 20px;
+	position: absolute;
+}
+
+.okayButtonModal
+{
+	background-color: #ffc107;
+	bottom: 10px;
+	right: 130px;
+}
+
+.cancelButtonModal
+{
+	background-color: #ff7043;
+	bottom: 10px;
+	right: 10px;
+}
+
+.cancelButtonModal:hover
+{
+	background-color: #ffa270;
+}
+
+.buttonModalContainer
+{
+	width: 100%;
+	padding-top: 50px;
 }
 
 /* ============== */

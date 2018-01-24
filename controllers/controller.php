@@ -19,6 +19,7 @@ function getProducts()
     $limit                    = null;
     $contains				  = null;
     $radioButton			  = null;
+    $tableTitle               = '50 derniers produits ajoutés';
 
     //init valeur
     if(isset($_POST['brandFilters']))
@@ -76,7 +77,8 @@ function getProducts()
 		$research,
 		$limit,
 		$contains,
-		$radioButton
+		$radioButton,
+        $tableTitle
 	);
     $filterCarac = $model->getFilters();
 

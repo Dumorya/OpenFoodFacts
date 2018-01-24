@@ -54,7 +54,8 @@ class Model
 		$research,
 		$limit,
 		$contains,
-		$radioButton
+		$radioButton,
+        $tableTitle
         )
     {
 
@@ -81,9 +82,10 @@ class Model
             // utilisation des filtres
             if ($creatorFilters !== null)
             {
-                $query .= 'WHERE LOWER(createur) LIKE ?';
+                $query .= ' WHERE LOWER(createur) LIKE ?';
                 $params[] = strtolower('%'.$creatorFilters.'%');
                 $multiFilter = true;
+                $tableTitle = 'Résultat de la recherche';
             }
 
             if ($brandFilters !== null)
@@ -99,6 +101,7 @@ class Model
                 $query .= ' LOWER(marque) LIKE ?';
                 $params[] = strtolower('%'.$brandFilters.'%');
                 $multiFilter = true;
+                $tableTitle = 'Résultat de la recherche';
             }
 
             if ($nutritionalScoreFilters !== null)
@@ -114,6 +117,7 @@ class Model
                 $query .= ' LOWER(note_nutritionnelle) LIKE ?';
                 $params[] = strtolower('%'.$nutritionalScoreFilters.'%');
                 $multiFilter = true;
+                $tableTitle = 'Résultat de la recherche';
             }
 
             if ($ingredientFilters !== null)
@@ -129,6 +133,7 @@ class Model
                 $query .= ' LOWER(ingredients) LIKE ?';
                 $params[] = strtolower('%'.$ingredientFilters.'%');
 				$multiFilter = true;
+                $tableTitle = 'Résultat de la recherche';
             }
 
             if ($countryFilter !== null)
@@ -144,6 +149,7 @@ class Model
                 $query .= ' LOWER(pays) LIKE ?';
                 $params[] = strtolower('%'.$countryFilter.'%');
 				$multiFilter = true;
+                $tableTitle = 'Résultat de la recherche';
             }
                         
             if ($contains != null)
@@ -162,6 +168,7 @@ class Model
 						}
 						$query .= ' LOWER(ingredients) LIKE ?';
 						$params[] = strtolower('%'.$contains.'%');
+                        $tableTitle = 'Résultat de la recherche';
 					}
 					else if($radioButton === 'notContains')
 					{
@@ -175,6 +182,7 @@ class Model
 						}
 						$query .= ' LOWER(ingredients) NOT LIKE ?';
 						$params[] = strtolower('%'.$contains.'%');
+                        $tableTitle = 'Résultat de la recherche';
 					}
 				}
 
@@ -183,8 +191,28 @@ class Model
             //fonction de recherche
             if ($research !== null)
             {
-                $query .= ' WHERE LOWER(nom_produit) LIKE ?';
-                $params[] = strtolower('%'.$research.'%');
+                $researchTable = str_word_count($research, 1);
+                if(count($researchTable) > 1)
+                {
+                    $i = 0;
+                    $query .= ' WHERE ';
+                    foreach($researchTable as $rT)
+                    {
+                        $query .= 'LOWER(nom_produit) LIKE ?';
+                        $params[] = strtolower('%'.$rT.'%');
+                        $i++;
+                        if($i < count($researchTable))
+                        {
+                            $query .= ' AND ';
+                        }
+                    }
+                }
+                else
+                {
+                    $query .= ' WHERE LOWER(nom_produit) LIKE ?';
+                    $params[] = strtolower('%'.$research.'%');
+                }
+                $tableTitle = 'Résultat de la recherche';
             }
             
             $query .= ' ORDER BY id_produit DESC ';

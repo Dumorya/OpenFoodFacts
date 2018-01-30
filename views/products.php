@@ -106,7 +106,7 @@
                             <input class="form-control" type="text" name="addProductBrand" required/>
 
                             <label>Pays (*) :</label>
-                            <p>Séparez les pays pas un espace <br/> Insérez un "_" à la place des espaces pour les pays à plusieurs mots</p>
+                            <p>Séparez les pays par un espace <br/> Insérez un "_" à la place des espaces pour les pays à plusieurs mots</p>
                             <input class="form-control" type="text" name="addProductCountry" placeholder="ex: Allemagne Polynésie_Française" required/>
 
                             <label>Poids :</label>

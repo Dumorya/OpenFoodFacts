@@ -5,7 +5,7 @@
 <div class="page-wrap">
     <nav class="navbar navbar-default" id="nav">
         <div class="container-fluid">
-          <a class="navbar-brand" href="https://fr.openfoodfacts.org/" target="_blank" id="linkOpenFoodFacts">Open Food Facts</a>
+          <a class="navbar-brand" href="index.php" id="linkOpenFoodFacts">Open Food Facts</a>
           <form id="searchForm" method="post" action="index.php?action=products">
               <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">

@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="51e330ac-d32d-493c-9dd2-06cfa2a5b93c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/controller.php" afterPath="$PROJECT_DIR$/controllers/controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/model.php" afterPath="$PROJECT_DIR$/models/model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/details.php" afterPath="$PROJECT_DIR$/views/details.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/products.php" afterPath="$PROJECT_DIR$/views/products.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +18,7 @@
       <file leaf-file-name="connect.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/connect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="270">
               <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding />
             </state>
@@ -51,39 +48,39 @@
       <file leaf-file-name="model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1129">
-              <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="267" column="16" lean-forward="false" selection-start-line="267" selection-start-column="16" selection-end-line="267" selection-end-column="16" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
-                <marker date="1516811488682" expanded="true" signature="1645:1898" ph="SELECT id_pr... produit" />
-                <marker date="1516811488682" expanded="true" signature="7224:9093" ph="INSERT INTO produit" />
-                <marker date="1516811488682" expanded="true" signature="7794:9076" ph="SELECT \'${$... produit" />
-                <marker date="1516811488682" expanded="true" signature="8697:9062" ph="SELECT 1 FRO... produit" />
-                <marker date="1516811488682" expanded="true" signature="9454:9832" ph="INSERT INTO pays" />
-                <marker date="1516811488682" expanded="true" signature="9518:9812" ph="SELECT \'${$... pays" />
-                <marker date="1516811488682" expanded="true" signature="9652:9811" ph="SELECT * FRO... pays" />
-                <marker date="1516811488682" expanded="true" signature="9882:10358" ph="INSERT INTO possede_pays" />
-                <marker date="1516811488682" expanded="true" signature="9969:10358" ph="SELECT (SELE... " />
-                <marker date="1516811488682" expanded="true" signature="10919:11057" ph="SELECT DISTI... filtre" />
-                <marker date="1516811488682" expanded="true" signature="13729:14416" ph="SELECT po.id... produit" />
-                <marker date="1516811488682" expanded="true" signature="14802:15177" ph="SELECT pa.no... produit" />
-                <marker date="1516811488682" expanded="true" signature="16069:16129" ph="UPDATE open_... " />
-                <marker date="1516811488682" expanded="true" signature="16069:16151" ph="UPDATE open_... " />
-                <marker date="1516811488682" expanded="true" signature="16069:16215" ph="UPDATE open_... " />
-                <marker date="1516811488682" expanded="true" signature="16069:16277" ph="UPDATE open_... " />
-                <marker date="1516811488682" expanded="true" signature="16069:17017" ph="UPDATE open_... " />
-                <marker date="1516811488682" expanded="true" signature="16069:17106" ph="UPDATE open_... " />
-                <marker date="1516811488682" expanded="true" signature="16069:17107" ph="UPDATE open_... " />
-                <marker date="1516811488682" expanded="true" signature="17375:17481" ph="DELETE FROM " />
-                <marker date="1516811488682" expanded="true" signature="17375:17502" ph="DELETE FROM " />
-                <marker date="1516811488682" expanded="true" signature="17375:17505" ph="DELETE FROM " />
-                <marker date="1516811488682" expanded="true" signature="17381:17481" ph="delete from " />
-                <marker date="1516811488682" expanded="true" signature="17570:17969" ph="INSERT INTO open_food_facts.pays... " />
-                <marker date="1516811488682" expanded="true" signature="17576:17969" ph="Insert INTO open_food_facts.pays... " />
-                <marker date="1516811488682" expanded="true" signature="17638:17947" ph="SELECT \'nom... pays" />
-                <marker date="1516811488682" expanded="true" signature="17661:17947" ph="select \'nom... pays" />
-                <marker date="1516811488682" expanded="true" signature="17774:17929" ph="SELECT * FRO... pays" />
-                <marker date="1516811488682" expanded="true" signature="17799:17929" ph="select * fro... pays" />
+                <marker date="1516912220953" expanded="true" signature="1646:1899" ph="SELECT id_pr... produit" />
+                <marker date="1516912220953" expanded="true" signature="7225:9094" ph="INSERT INTO produit" />
+                <marker date="1516912220953" expanded="true" signature="7795:9077" ph="SELECT \'${$... produit" />
+                <marker date="1516912220953" expanded="true" signature="8698:9063" ph="SELECT 1 FRO... produit" />
+                <marker date="1516912220953" expanded="true" signature="9455:9833" ph="INSERT INTO pays" />
+                <marker date="1516912220953" expanded="true" signature="9519:9813" ph="SELECT \'${$... pays" />
+                <marker date="1516912220953" expanded="true" signature="9653:9812" ph="SELECT * FRO... pays" />
+                <marker date="1516912220953" expanded="true" signature="9883:10359" ph="INSERT INTO possede_pays" />
+                <marker date="1516912220953" expanded="true" signature="9970:10359" ph="SELECT (SELE... " />
+                <marker date="1516912220953" expanded="true" signature="10920:11058" ph="SELECT DISTI... filtre" />
+                <marker date="1516912220953" expanded="true" signature="13730:14417" ph="SELECT po.id... produit" />
+                <marker date="1516912220953" expanded="true" signature="14803:15178" ph="SELECT pa.no... produit" />
+                <marker date="1516912220953" expanded="true" signature="16070:16130" ph="UPDATE open_... " />
+                <marker date="1516912220953" expanded="true" signature="16070:16152" ph="UPDATE open_... " />
+                <marker date="1516912220953" expanded="true" signature="16070:16216" ph="UPDATE open_... " />
+                <marker date="1516912220953" expanded="true" signature="16070:16278" ph="UPDATE open_... " />
+                <marker date="1516912220953" expanded="true" signature="16070:17018" ph="UPDATE open_... " />
+                <marker date="1516912220953" expanded="true" signature="16070:17107" ph="UPDATE open_... " />
+                <marker date="1516912220953" expanded="true" signature="16070:17108" ph="UPDATE open_... " />
+                <marker date="1516912220953" expanded="true" signature="17376:17482" ph="DELETE FROM " />
+                <marker date="1516912220953" expanded="true" signature="17376:17503" ph="DELETE FROM " />
+                <marker date="1516912220953" expanded="true" signature="17376:17506" ph="DELETE FROM " />
+                <marker date="1516912220953" expanded="true" signature="17382:17482" ph="delete from " />
+                <marker date="1516912220953" expanded="true" signature="17571:17970" ph="INSERT INTO open_food_facts.pays... " />
+                <marker date="1516912220953" expanded="true" signature="17577:17970" ph="Insert INTO open_food_facts.pays... " />
+                <marker date="1516912220953" expanded="true" signature="17639:17948" ph="SELECT \'nom... pays" />
+                <marker date="1516912220953" expanded="true" signature="17662:17948" ph="select \'nom... pays" />
+                <marker date="1516912220953" expanded="true" signature="17775:17930" ph="SELECT * FRO... pays" />
+                <marker date="1516912220953" expanded="true" signature="17800:17930" ph="select * fro... pays" />
               </folding>
             </state>
           </provider>
@@ -93,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/views/details.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
                 <marker date="1516750039782" expanded="true" signature="386:410" ph="..." />
               </folding>
@@ -135,8 +132,8 @@
       <file leaf-file-name="products.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/products.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="109" column="139" lean-forward="false" selection-start-line="109" selection-start-column="139" selection-end-line="109" selection-end-column="139" />
+            <state relative-caret-position="126">
+              <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -155,7 +152,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
+            <state relative-caret-position="9432">
               <caret line="524" column="14" lean-forward="false" selection-start-line="524" selection-start-column="14" selection-end-line="524" selection-end-column="14" />
               <folding />
             </state>
@@ -196,6 +193,7 @@
       <find>th</find>
       <find>str_word_count</find>
       <find>modal</find>
+      <find>open food</find>
     </findStrings>
     <dirStrings>
       <dir>C:\wamp64\www\prolog\OpenFoodFacts</dir>
@@ -216,8 +214,8 @@
         <option value="$PROJECT_DIR$/views/edit.php" />
         <option value="$PROJECT_DIR$/views/details.php" />
         <option value="$PROJECT_DIR$/controllers/controller.php" />
-        <option value="$PROJECT_DIR$/models/model.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/models/model.php" />
         <option value="$PROJECT_DIR$/views/products.php" />
       </list>
     </option>
@@ -253,6 +251,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -301,8 +301,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,22 +351,22 @@
       <workItem from="1516575153084" duration="371000" />
       <workItem from="1516643887152" duration="3290000" />
       <workItem from="1516716082959" duration="18599000" />
-      <workItem from="1516803500184" duration="8365000" />
+      <workItem from="1516803500184" duration="8793000" />
+      <workItem from="1516912072286" duration="192000" />
+      <workItem from="1517312550169" duration="123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93838000" />
+    <option name="totallyTimeSpent" value="94581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -380,6 +378,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -442,35 +441,35 @@
           <caret line="291" column="0" lean-forward="false" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1516811488682" expanded="true" signature="1645:1898" ph="SELECT id_pr... produit" />
-            <marker date="1516811488682" expanded="true" signature="7224:9093" ph="INSERT INTO produit" />
-            <marker date="1516811488682" expanded="true" signature="7794:9076" ph="SELECT \'${$... produit" />
-            <marker date="1516811488682" expanded="true" signature="8697:9062" ph="SELECT 1 FRO... produit" />
-            <marker date="1516811488682" expanded="true" signature="9454:9832" ph="INSERT INTO pays" />
-            <marker date="1516811488682" expanded="true" signature="9518:9812" ph="SELECT \'${$... pays" />
-            <marker date="1516811488682" expanded="true" signature="9652:9811" ph="SELECT * FRO... pays" />
-            <marker date="1516811488682" expanded="true" signature="9882:10358" ph="INSERT INTO possede_pays" />
-            <marker date="1516811488682" expanded="true" signature="9969:10358" ph="SELECT (SELE... " />
-            <marker date="1516811488682" expanded="true" signature="10919:11057" ph="SELECT DISTI... filtre" />
-            <marker date="1516811488682" expanded="true" signature="13729:14416" ph="SELECT po.id... produit" />
-            <marker date="1516811488682" expanded="true" signature="14802:15177" ph="SELECT pa.no... produit" />
-            <marker date="1516811488682" expanded="true" signature="16069:16129" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16151" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16215" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16277" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17017" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17106" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17107" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="17375:17481" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17375:17502" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17375:17505" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17381:17481" ph="delete from " />
-            <marker date="1516811488682" expanded="true" signature="17570:17969" ph="INSERT INTO open_food_facts.pays... " />
-            <marker date="1516811488682" expanded="true" signature="17576:17969" ph="Insert INTO open_food_facts.pays... " />
-            <marker date="1516811488682" expanded="true" signature="17638:17947" ph="SELECT \'nom... pays" />
-            <marker date="1516811488682" expanded="true" signature="17661:17947" ph="select \'nom... pays" />
-            <marker date="1516811488682" expanded="true" signature="17774:17929" ph="SELECT * FRO... pays" />
-            <marker date="1516811488682" expanded="true" signature="17799:17929" ph="select * fro... pays" />
+            <marker date="1516912220953" expanded="true" signature="1646:1899" ph="SELECT id_pr... produit" />
+            <marker date="1516912220953" expanded="true" signature="7225:9094" ph="INSERT INTO produit" />
+            <marker date="1516912220953" expanded="true" signature="7795:9077" ph="SELECT \'${$... produit" />
+            <marker date="1516912220953" expanded="true" signature="8698:9063" ph="SELECT 1 FRO... produit" />
+            <marker date="1516912220953" expanded="true" signature="9455:9833" ph="INSERT INTO pays" />
+            <marker date="1516912220953" expanded="true" signature="9519:9813" ph="SELECT \'${$... pays" />
+            <marker date="1516912220953" expanded="true" signature="9653:9812" ph="SELECT * FRO... pays" />
+            <marker date="1516912220953" expanded="true" signature="9883:10359" ph="INSERT INTO possede_pays" />
+            <marker date="1516912220953" expanded="true" signature="9970:10359" ph="SELECT (SELE... " />
+            <marker date="1516912220953" expanded="true" signature="10920:11058" ph="SELECT DISTI... filtre" />
+            <marker date="1516912220953" expanded="true" signature="13730:14417" ph="SELECT po.id... produit" />
+            <marker date="1516912220953" expanded="true" signature="14803:15178" ph="SELECT pa.no... produit" />
+            <marker date="1516912220953" expanded="true" signature="16070:16130" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16152" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16216" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16278" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17018" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17107" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17108" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="17376:17482" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17376:17503" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17376:17506" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17382:17482" ph="delete from " />
+            <marker date="1516912220953" expanded="true" signature="17571:17970" ph="INSERT INTO open_food_facts.pays... " />
+            <marker date="1516912220953" expanded="true" signature="17577:17970" ph="Insert INTO open_food_facts.pays... " />
+            <marker date="1516912220953" expanded="true" signature="17639:17948" ph="SELECT \'nom... pays" />
+            <marker date="1516912220953" expanded="true" signature="17662:17948" ph="select \'nom... pays" />
+            <marker date="1516912220953" expanded="true" signature="17775:17930" ph="SELECT * FRO... pays" />
+            <marker date="1516912220953" expanded="true" signature="17800:17930" ph="select * fro... pays" />
           </folding>
         </state>
       </provider>
@@ -530,35 +529,35 @@
           <caret line="88" column="22" lean-forward="false" selection-start-line="88" selection-start-column="22" selection-end-line="99" selection-end-column="50" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1516811488682" expanded="true" signature="1645:1898" ph="SELECT id_pr... produit" />
-            <marker date="1516811488682" expanded="true" signature="7224:9093" ph="INSERT INTO produit" />
-            <marker date="1516811488682" expanded="true" signature="7794:9076" ph="SELECT \'${$... produit" />
-            <marker date="1516811488682" expanded="true" signature="8697:9062" ph="SELECT 1 FRO... produit" />
-            <marker date="1516811488682" expanded="true" signature="9454:9832" ph="INSERT INTO pays" />
-            <marker date="1516811488682" expanded="true" signature="9518:9812" ph="SELECT \'${$... pays" />
-            <marker date="1516811488682" expanded="true" signature="9652:9811" ph="SELECT * FRO... pays" />
-            <marker date="1516811488682" expanded="true" signature="9882:10358" ph="INSERT INTO possede_pays" />
-            <marker date="1516811488682" expanded="true" signature="9969:10358" ph="SELECT (SELE... " />
-            <marker date="1516811488682" expanded="true" signature="10919:11057" ph="SELECT DISTI... filtre" />
-            <marker date="1516811488682" expanded="true" signature="13729:14416" ph="SELECT po.id... produit" />
-            <marker date="1516811488682" expanded="true" signature="14802:15177" ph="SELECT pa.no... produit" />
-            <marker date="1516811488682" expanded="true" signature="16069:16129" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16151" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16215" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16277" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17017" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17106" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17107" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="17375:17481" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17375:17502" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17375:17505" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17381:17481" ph="delete from " />
-            <marker date="1516811488682" expanded="true" signature="17570:17969" ph="INSERT INTO open_food_facts.pays... " />
-            <marker date="1516811488682" expanded="true" signature="17576:17969" ph="Insert INTO open_food_facts.pays... " />
-            <marker date="1516811488682" expanded="true" signature="17638:17947" ph="SELECT \'nom... pays" />
-            <marker date="1516811488682" expanded="true" signature="17661:17947" ph="select \'nom... pays" />
-            <marker date="1516811488682" expanded="true" signature="17774:17929" ph="SELECT * FRO... pays" />
-            <marker date="1516811488682" expanded="true" signature="17799:17929" ph="select * fro... pays" />
+            <marker date="1516912220953" expanded="true" signature="1646:1899" ph="SELECT id_pr... produit" />
+            <marker date="1516912220953" expanded="true" signature="7225:9094" ph="INSERT INTO produit" />
+            <marker date="1516912220953" expanded="true" signature="7795:9077" ph="SELECT \'${$... produit" />
+            <marker date="1516912220953" expanded="true" signature="8698:9063" ph="SELECT 1 FRO... produit" />
+            <marker date="1516912220953" expanded="true" signature="9455:9833" ph="INSERT INTO pays" />
+            <marker date="1516912220953" expanded="true" signature="9519:9813" ph="SELECT \'${$... pays" />
+            <marker date="1516912220953" expanded="true" signature="9653:9812" ph="SELECT * FRO... pays" />
+            <marker date="1516912220953" expanded="true" signature="9883:10359" ph="INSERT INTO possede_pays" />
+            <marker date="1516912220953" expanded="true" signature="9970:10359" ph="SELECT (SELE... " />
+            <marker date="1516912220953" expanded="true" signature="10920:11058" ph="SELECT DISTI... filtre" />
+            <marker date="1516912220953" expanded="true" signature="13730:14417" ph="SELECT po.id... produit" />
+            <marker date="1516912220953" expanded="true" signature="14803:15178" ph="SELECT pa.no... produit" />
+            <marker date="1516912220953" expanded="true" signature="16070:16130" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16152" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16216" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16278" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17018" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17107" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17108" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="17376:17482" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17376:17503" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17376:17506" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17382:17482" ph="delete from " />
+            <marker date="1516912220953" expanded="true" signature="17571:17970" ph="INSERT INTO open_food_facts.pays... " />
+            <marker date="1516912220953" expanded="true" signature="17577:17970" ph="Insert INTO open_food_facts.pays... " />
+            <marker date="1516912220953" expanded="true" signature="17639:17948" ph="SELECT \'nom... pays" />
+            <marker date="1516912220953" expanded="true" signature="17662:17948" ph="select \'nom... pays" />
+            <marker date="1516912220953" expanded="true" signature="17775:17930" ph="SELECT * FRO... pays" />
+            <marker date="1516912220953" expanded="true" signature="17800:17930" ph="select * fro... pays" />
           </folding>
         </state>
       </provider>
@@ -618,35 +617,35 @@
           <caret line="403" column="32" lean-forward="false" selection-start-line="403" selection-start-column="32" selection-end-line="403" selection-end-column="32" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1516811488682" expanded="true" signature="1645:1898" ph="SELECT id_pr... produit" />
-            <marker date="1516811488682" expanded="true" signature="7224:9093" ph="INSERT INTO produit" />
-            <marker date="1516811488682" expanded="true" signature="7794:9076" ph="SELECT \'${$... produit" />
-            <marker date="1516811488682" expanded="true" signature="8697:9062" ph="SELECT 1 FRO... produit" />
-            <marker date="1516811488682" expanded="true" signature="9454:9832" ph="INSERT INTO pays" />
-            <marker date="1516811488682" expanded="true" signature="9518:9812" ph="SELECT \'${$... pays" />
-            <marker date="1516811488682" expanded="true" signature="9652:9811" ph="SELECT * FRO... pays" />
-            <marker date="1516811488682" expanded="true" signature="9882:10358" ph="INSERT INTO possede_pays" />
-            <marker date="1516811488682" expanded="true" signature="9969:10358" ph="SELECT (SELE... " />
-            <marker date="1516811488682" expanded="true" signature="10919:11057" ph="SELECT DISTI... filtre" />
-            <marker date="1516811488682" expanded="true" signature="13729:14416" ph="SELECT po.id... produit" />
-            <marker date="1516811488682" expanded="true" signature="14802:15177" ph="SELECT pa.no... produit" />
-            <marker date="1516811488682" expanded="true" signature="16069:16129" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16151" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16215" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16277" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17017" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17106" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17107" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="17375:17481" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17375:17502" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17375:17505" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17381:17481" ph="delete from " />
-            <marker date="1516811488682" expanded="true" signature="17570:17969" ph="INSERT INTO open_food_facts.pays... " />
-            <marker date="1516811488682" expanded="true" signature="17576:17969" ph="Insert INTO open_food_facts.pays... " />
-            <marker date="1516811488682" expanded="true" signature="17638:17947" ph="SELECT \'nom... pays" />
-            <marker date="1516811488682" expanded="true" signature="17661:17947" ph="select \'nom... pays" />
-            <marker date="1516811488682" expanded="true" signature="17774:17929" ph="SELECT * FRO... pays" />
-            <marker date="1516811488682" expanded="true" signature="17799:17929" ph="select * fro... pays" />
+            <marker date="1516912220953" expanded="true" signature="1646:1899" ph="SELECT id_pr... produit" />
+            <marker date="1516912220953" expanded="true" signature="7225:9094" ph="INSERT INTO produit" />
+            <marker date="1516912220953" expanded="true" signature="7795:9077" ph="SELECT \'${$... produit" />
+            <marker date="1516912220953" expanded="true" signature="8698:9063" ph="SELECT 1 FRO... produit" />
+            <marker date="1516912220953" expanded="true" signature="9455:9833" ph="INSERT INTO pays" />
+            <marker date="1516912220953" expanded="true" signature="9519:9813" ph="SELECT \'${$... pays" />
+            <marker date="1516912220953" expanded="true" signature="9653:9812" ph="SELECT * FRO... pays" />
+            <marker date="1516912220953" expanded="true" signature="9883:10359" ph="INSERT INTO possede_pays" />
+            <marker date="1516912220953" expanded="true" signature="9970:10359" ph="SELECT (SELE... " />
+            <marker date="1516912220953" expanded="true" signature="10920:11058" ph="SELECT DISTI... filtre" />
+            <marker date="1516912220953" expanded="true" signature="13730:14417" ph="SELECT po.id... produit" />
+            <marker date="1516912220953" expanded="true" signature="14803:15178" ph="SELECT pa.no... produit" />
+            <marker date="1516912220953" expanded="true" signature="16070:16130" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16152" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16216" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16278" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17018" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17107" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17108" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="17376:17482" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17376:17503" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17376:17506" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17382:17482" ph="delete from " />
+            <marker date="1516912220953" expanded="true" signature="17571:17970" ph="INSERT INTO open_food_facts.pays... " />
+            <marker date="1516912220953" expanded="true" signature="17577:17970" ph="Insert INTO open_food_facts.pays... " />
+            <marker date="1516912220953" expanded="true" signature="17639:17948" ph="SELECT \'nom... pays" />
+            <marker date="1516912220953" expanded="true" signature="17662:17948" ph="select \'nom... pays" />
+            <marker date="1516912220953" expanded="true" signature="17775:17930" ph="SELECT * FRO... pays" />
+            <marker date="1516912220953" expanded="true" signature="17800:17930" ph="select * fro... pays" />
           </folding>
         </state>
       </provider>
@@ -723,22 +722,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="50" column="3" lean-forward="false" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/connect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="270">
           <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -763,53 +753,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="102" column="51" lean-forward="false" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1129">
-          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1516811488682" expanded="true" signature="1645:1898" ph="SELECT id_pr... produit" />
-            <marker date="1516811488682" expanded="true" signature="7224:9093" ph="INSERT INTO produit" />
-            <marker date="1516811488682" expanded="true" signature="7794:9076" ph="SELECT \'${$... produit" />
-            <marker date="1516811488682" expanded="true" signature="8697:9062" ph="SELECT 1 FRO... produit" />
-            <marker date="1516811488682" expanded="true" signature="9454:9832" ph="INSERT INTO pays" />
-            <marker date="1516811488682" expanded="true" signature="9518:9812" ph="SELECT \'${$... pays" />
-            <marker date="1516811488682" expanded="true" signature="9652:9811" ph="SELECT * FRO... pays" />
-            <marker date="1516811488682" expanded="true" signature="9882:10358" ph="INSERT INTO possede_pays" />
-            <marker date="1516811488682" expanded="true" signature="9969:10358" ph="SELECT (SELE... " />
-            <marker date="1516811488682" expanded="true" signature="10919:11057" ph="SELECT DISTI... filtre" />
-            <marker date="1516811488682" expanded="true" signature="13729:14416" ph="SELECT po.id... produit" />
-            <marker date="1516811488682" expanded="true" signature="14802:15177" ph="SELECT pa.no... produit" />
-            <marker date="1516811488682" expanded="true" signature="16069:16129" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16151" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16215" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:16277" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17017" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17106" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="16069:17107" ph="UPDATE open_... " />
-            <marker date="1516811488682" expanded="true" signature="17375:17481" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17375:17502" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17375:17505" ph="DELETE FROM " />
-            <marker date="1516811488682" expanded="true" signature="17381:17481" ph="delete from " />
-            <marker date="1516811488682" expanded="true" signature="17570:17969" ph="INSERT INTO open_food_facts.pays... " />
-            <marker date="1516811488682" expanded="true" signature="17576:17969" ph="Insert INTO open_food_facts.pays... " />
-            <marker date="1516811488682" expanded="true" signature="17638:17947" ph="SELECT \'nom... pays" />
-            <marker date="1516811488682" expanded="true" signature="17661:17947" ph="select \'nom... pays" />
-            <marker date="1516811488682" expanded="true" signature="17774:17929" ph="SELECT * FRO... pays" />
-            <marker date="1516811488682" expanded="true" signature="17799:17929" ph="select * fro... pays" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/details.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
             <marker date="1516750039782" expanded="true" signature="386:410" ph="..." />
           </folding>
@@ -847,16 +797,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
+        <state relative-caret-position="9432">
           <caret line="524" column="14" lean-forward="false" selection-start-line="524" selection-start-column="14" selection-end-line="524" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="267" column="16" lean-forward="false" selection-start-line="267" selection-start-column="16" selection-end-line="267" selection-end-column="16" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <marker date="1516912220953" expanded="true" signature="1646:1899" ph="SELECT id_pr... produit" />
+            <marker date="1516912220953" expanded="true" signature="7225:9094" ph="INSERT INTO produit" />
+            <marker date="1516912220953" expanded="true" signature="7795:9077" ph="SELECT \'${$... produit" />
+            <marker date="1516912220953" expanded="true" signature="8698:9063" ph="SELECT 1 FRO... produit" />
+            <marker date="1516912220953" expanded="true" signature="9455:9833" ph="INSERT INTO pays" />
+            <marker date="1516912220953" expanded="true" signature="9519:9813" ph="SELECT \'${$... pays" />
+            <marker date="1516912220953" expanded="true" signature="9653:9812" ph="SELECT * FRO... pays" />
+            <marker date="1516912220953" expanded="true" signature="9883:10359" ph="INSERT INTO possede_pays" />
+            <marker date="1516912220953" expanded="true" signature="9970:10359" ph="SELECT (SELE... " />
+            <marker date="1516912220953" expanded="true" signature="10920:11058" ph="SELECT DISTI... filtre" />
+            <marker date="1516912220953" expanded="true" signature="13730:14417" ph="SELECT po.id... produit" />
+            <marker date="1516912220953" expanded="true" signature="14803:15178" ph="SELECT pa.no... produit" />
+            <marker date="1516912220953" expanded="true" signature="16070:16130" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16152" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16216" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:16278" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17018" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17107" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="16070:17108" ph="UPDATE open_... " />
+            <marker date="1516912220953" expanded="true" signature="17376:17482" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17376:17503" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17376:17506" ph="DELETE FROM " />
+            <marker date="1516912220953" expanded="true" signature="17382:17482" ph="delete from " />
+            <marker date="1516912220953" expanded="true" signature="17571:17970" ph="INSERT INTO open_food_facts.pays... " />
+            <marker date="1516912220953" expanded="true" signature="17577:17970" ph="Insert INTO open_food_facts.pays... " />
+            <marker date="1516912220953" expanded="true" signature="17639:17948" ph="SELECT \'nom... pays" />
+            <marker date="1516912220953" expanded="true" signature="17662:17948" ph="select \'nom... pays" />
+            <marker date="1516912220953" expanded="true" signature="17775:17930" ph="SELECT * FRO... pays" />
+            <marker date="1516912220953" expanded="true" signature="17800:17930" ph="select * fro... pays" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/products.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="109" column="139" lean-forward="false" selection-start-line="109" selection-start-column="139" selection-end-line="109" selection-end-column="139" />
+        <state relative-caret-position="126">
+          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
           <folding />
         </state>
       </provider>

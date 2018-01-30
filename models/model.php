@@ -55,7 +55,7 @@ class Model
 		$limit,
 		$contains,
 		$radioButton,
-        $tableTitle
+        &$tableTitle
         )
     {
 
